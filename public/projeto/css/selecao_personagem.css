@@ -1,0 +1,53 @@
+body{
+    background-color: #0C1314;
+}
+
+.personagens{
+    width: 100%;    
+}
+
+.personagens .container{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    color: #fff;
+    font-size: 21px;
+}
+
+.card_personagem{
+    height: 225px;
+    width: 150px;
+    transition: 0.3s ease-in;
+    color: #fff;
+}
+
+.card_personagem:hover{
+    height: 240px;
+    width: 165px;
+   background-color: #fff;
+   color: #0C1314;
+}
+
+img{
+    height: 65%;
+    width: 100%;
+    background-size: cover;
+}
+
+.card_personagem p{
+    height: 25%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items:center; 
+    text-align: center;  
+    font-family: "upheavtt";
+}
+
+
+
+

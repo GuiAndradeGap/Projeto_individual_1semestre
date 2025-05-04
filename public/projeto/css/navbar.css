@@ -1,0 +1,45 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: "poppins", sans-serif;
+}
+
+@font-face{
+    font-family: 'upheavtt';
+    src: url(../font/upheavtt.ttf);
+}
+
+.navbar{
+    width: 98%;
+    height: 75px;
+    margin-bottom: 5%;
+}
+
+.navbar .container{
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between  ;
+    align-items: center;
+}
+
+.logo{
+    height: 75px;
+    width: 125px;
+    background-image: url("../img/logo_f1.png");
+    background-size: cover;
+    margin-left: 10px;
+}
+
+
+
+.pesquisa{
+    width: 350px;
+    display: flex;
+    flex-direction: row;
+    color: #fff;
+    gap: 30px;
+    cursor: pointer ;
+}

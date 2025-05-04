@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>F1</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/tela_inicial.css">
+    <link rel="icon" href="assets/icon/favicon2.ico">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <!-- icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+    <script src="./js/carrosel.js" defer></script>
+    <script src="./js/cardPiloto.js" defer></script>
+</head>
+
+<body>
+  
+  <!-- Parte - Banner -->
+    <div class="banner">
+      <div class="container">
+        <!-- Parte - Header -->
+        <div class="container_header">
+            <div class="logo"></div>
+          <ul class="navbar">
+            <li class="agora">
+              <a href="#">Home</a>
+            </li>
+            <li>
+              <a href="">CarRacing</a>
+            </li>
+            <li>
+              <a href="cadastro.html">Entrar</a>
+            </li>
+            <li>
+              <a href="login.html">Login</a>
+            </li>
+          </ul>
+        </div>
+        <!-- Título -->
+         <div class="banner_title">
+            <p>Experimente<br> mais da f1</p>
+        </div>
+      </div>
+    </div>
+    <div class="formula1">
+      <div class="container">
+        <div class="info_f1">
+          <p class="title">O que é a Fórmula 1</p>
+          <p class="text_f1">A Fórmula 1 é o pico do automobilismo, onde os melhores pilotos do mundo aceleram carros ultra rápidos em circuitos desafiadores espalhados pelo planeta.
+            É pura adrenalina: velocidade, ultrapassagens, estratégia e muita emoção a cada volta! Durante a temporada, os pilotos e suas equipes disputam ponto a ponto em busca do título de campeão mundial. Cada corrida, chamada de Grande Prêmio, é um verdadeiro espetáculo, onde cada segundo e cada decisão podem mudar tudo.</p>
+          <button>Saiba mais</button>
+        </div>
+        <video src="./video/This Is Formula 1.mp4" autoplay loop muted></video>
+      </div>
+    </div>
+    <!-- Carrossel -->
+    <div class="whapper">
+      <ul class="carrossel" id="carrossel">
+        <!-- Cards -->
+      </ul>
+    </div>
+</body>
+</html>
+
+<script>
+   const carrossel = document.getElementById('carrossel');
+   link = `piloto.html`
+   
+  fetch('pilotos.json')
+  .then(response => response.json())
+  .then(pilotos => {
+    pilotos.forEach(piloto => {
+      const li = document.createElement('li');
+      li.className = 'card';
+      li.innerHTML = `
+        <video src="${piloto.video}" autoplay loop muted></video>
+        <p class="title">${piloto.nome}</p>
+        <div class="sobre">
+          <p class="descricao">${piloto.descricao}</p>
+        </div>
+        <a href="${link}"><button>Saiba mais</button></a>
+      `;
+      carrossel.appendChild(li);
+    });
+  });
+
+  
+</script>
