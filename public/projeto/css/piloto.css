@@ -1,0 +1,86 @@
+body{
+    background-color: #0C1314;
+}
+
+.container_piloto{
+    height: 85vh;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    display: flex;
+
+}
+
+.container_piloto .banner_piloto{
+    width: 45%;
+    height: 100%;
+} 
+
+.banner_piloto img{
+    width: 50%;
+    height: 85%;
+    position: fixed;
+    bottom: 0;
+}
+
+
+.container_piloto .info_piloto{
+    width: 55%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.info_piloto .tabela_piloto{
+    width: 80%;
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: rgb(255, 255, 255);
+}
+
+.nome_pais{
+    width: 100%;
+    margin-bottom: 2%;
+}
+
+.nome_piloto{
+    font-family: 'upheavtt';
+    font-size: 50px;
+}
+
+.pais{
+    width: 10%;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    color: rgb(255, 255, 255);
+}
+
+.pais img{
+    width: auto;
+    height: 20px;
+}
+
+.tabela{
+    width: 100%;
+    height: 70px;
+    background-color: #151b1c;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 2%;
+}
+
+.tabela p{
+    margin-left: 3%;
+    font-family: 'upheavtt';
+    font-size: 25px;
+}
+
+.tabela h3{
+    margin-right: 3%;
+}
