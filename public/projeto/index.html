@@ -69,7 +69,6 @@
 
 <script>
    const carrossel = document.getElementById('carrossel');
-   link = `piloto.html`
    
   fetch('pilotos.json')
   .then(response => response.json())
@@ -83,7 +82,7 @@
         <div class="sobre">
           <p class="descricao">${piloto.descricao}</p>
         </div>
-        <a href="${link}"><button>Saiba mais</button></a>
+        <a href="piloto.html?id=${piloto.id}"><button>Saiba mais</button></a>
       `;
       carrossel.appendChild(li);
     });
