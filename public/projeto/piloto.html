@@ -23,49 +23,79 @@
             </div>
         </div>
     </div>
-    <div class="container_piloto">
-        <div class="banner_piloto">
-            <img src="./img/Pilotos/hamilton.png" alt="">
-        </div>
+    <div id="container_piloto">
+        <!-- Imagem do piloto -->
         <div class="info_piloto">
             <div class="tabela_piloto">
-                <div class="nome_pais">
-                    <p class="nome_piloto">Lewin Hamilton</p>
-                    <div class="pais"><img src="./img/Pilotos/inglaterra.avif" alt=""><p>Inglaterra</p></div>
-                </div>
-                <!-- Numero -->
-                <div class="tabela">
-                    <p>Número</p>
-                    <h3>16</h3>
-                </div>
-                <!-- Equipe -->
-                <div class="tabela">
-                    <p>Equipe</p>
-                    <h3>Ferrari</h3>
-                </div>
-                <!-- Campeonato -->
-                <div class="tabela">
-                    <p>Campeonatos</p>
-                    <h3>7</h3>
-                </div>
-                <!-- Grands -->
-                <div class="tabela">
-                    <p>Grands Prix</p>
-                    <h3>361</h3>
-                </div>
-                <!-- Nascimento -->
-                <div class="tabela">
-                    <p>Data de Nascimento</p>
-                    <h3>07/01/1985</h3>
-                </div>
-                <!-- Local de Nascimento -->
-                <div class="tabela">
-                    <p>Local de Nascimento</p>
-                    <h3>Stevenage, England</h3>
-                </div>
+                <!-- Informações do piloto -->
             </div>
         </div>
     </div>
  
 </body>
 </html>
+
+<script>
+    const urlParams = new URLSearchParams(window.location.search);
+    const id = parseInt(urlParams.get("id")); 
+  
+    const containerPiloto = document.getElementById('container_piloto');
+    const tabela_piloto = document.querySelector('.tabela_piloto');
+
+    fetch('pilotos.json')
+      .then(response => response.json())
+      .then(pilotos => {
+        const piloto = pilotos.find(p => p.id === id);
+  
+        if (piloto) {
+
+          //Adicionando Imagem (:
+          const img = document.createElement('div');
+          img.className = 'banner_piloto';
+          img.innerHTML = `
+            <img src="${piloto.imagem}" alt="${piloto.nome}">
+          `;
+          containerPiloto.appendChild(img);
+
+          //Adicionando informações
+          tabela_piloto.innerHTML = `
+            <div class="nome_pais">
+                <p class="nome_piloto">${piloto.nome}</p>
+                <div class="pais"><img src="${piloto.bandeira_pais}" alt=""><p>${piloto.pais}</p></div> 
+            </div>
+            <div class="tabela">
+                    <p>Número</p>
+                    <h3>${piloto.numero}</h3>
+                </div>
+                <!-- Equipe -->
+                <div class="tabela">
+                    <p>Equipe</p>
+                    <h3>${piloto.equipe}</h3>
+                </div>
+                <!-- Campeonato -->
+                <div class="tabela">
+                    <p>Campeonatos</p>
+                    <h3>${piloto.campeonatos}</h3>
+                </div>
+                <!-- Grands -->
+                <div class="tabela">
+                    <p>Grands Prix</p>
+                    <h3>${piloto.grandes_premios}</h3>
+                </div>
+                <!-- Nascimento -->
+                <div class="tabela">
+                    <p>Data de Nascimento</p>
+                    <h3>${piloto.data_nascimento}</h3>
+                </div>
+                <!-- Local de Nascimento -->
+                <div class="tabela">
+                    <p>Local de Nascimento</p>
+                    <h3>${piloto.local_nascimento}</h3>
+                </div>
+          `
+
+        } else {
+          containerPiloto.innerHTML = '<p>Piloto não encontrado.</p>';
+        }
+      });
+  </script>

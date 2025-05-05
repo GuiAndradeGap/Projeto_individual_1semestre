@@ -2,29 +2,30 @@ body{
     background-color: #0C1314;
 }
 
-.container_piloto{
+#container_piloto{
     height: 85vh;
     width: 100%;
     position: fixed;
     bottom: 0;
     display: flex;
+    flex-direction: row-reverse;
 
 }
 
-.container_piloto .banner_piloto{
+#container_piloto .banner_piloto{
     width: 45%;
     height: 100%;
 } 
 
 .banner_piloto img{
-    width: 50%;
+    width: 42%;
     height: 85%;
     position: fixed;
     bottom: 0;
 }
 
 
-.container_piloto .info_piloto{
+#container_piloto .info_piloto{
     width: 55%;
     height: 100%;
     display: flex;
@@ -53,7 +54,7 @@ body{
 }
 
 .pais{
-    width: 10%;
+    width: 100%;
     display: flex;
     align-items: center;
     gap: 5px;
@@ -72,7 +73,7 @@ body{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin: 2%;
+    margin: 1%;
 }
 
 .tabela p{
