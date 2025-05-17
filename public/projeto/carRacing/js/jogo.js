@@ -28,16 +28,21 @@ function desenharGrama(){
     ctx.fillRect(0, canvas.height/2 , canvas.width, canvas.height/2)
 }
 
+function velocidadeCarro(){
+    jogadorZ += 25  
+}
 
-
-let jogo = setInterval(() =>{
+function jogo(){
+setInterval(() =>{
     ctx.clearRect(0, 0, canvas.width, canvas.height)
-    jogadorZ += 15  
+    velocidadeCarro()
     desenharGrama()
     desenharEstrada()
     desenharCarro()
     desenharBackground()
 }, 1000/60)
+}
 
+jogo()
 
 
