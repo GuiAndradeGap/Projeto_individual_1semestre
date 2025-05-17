@@ -1,9 +1,8 @@
 //Câmera - posição da câmera na projeção z (3d) e o campo de visão da câmera (:
 let cameraZ = 0
-let campoVisaoCamera = 200 
-//Mundo - tamanho do mundo e largura da estrada 
-let mundoZ = 200
-let widthEstrada = 1.7
+let campoVisaoCamera = 200
+//largura da estrada 
+let widthEstrada = 1.8
 
 function projecao(z){
     let escala = campoVisaoCamera / (z -cameraZ) // Se o objeto está longe = pequeno - Senão grande

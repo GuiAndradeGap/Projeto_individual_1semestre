@@ -2,7 +2,6 @@
 
 window.addEventListener('keydown', (evento) => {
     evento.preventDefault()
-    console.log(evento.key)
 
     if(evento.key == 'ArrowRight'){
         xCarro += 20;
