@@ -2,7 +2,7 @@
 tamanhoSegmento = 100
 segmentos = []
 obstaculos = []
-var colisao = 0
+var totalColisao = 0
 
 //Obstáculo
 const obstaculoImg = new Image()
@@ -17,13 +17,15 @@ for(i = 1;i <= 1000;i++){
     })
 }
 
-for (i = 0; i < 100; i++) {
+for (i = 0; i < 150; i++) {
   let o = Math.random()
   let z = Math.random() * (1000 * (tamanhoSegmento+100)) + 5000
-  obstaculos.push({ z, o })
+  obstaculos.push({ 
+    z, 
+    o,
+    colisao: 0
+  })
 }
-
-console.log(obstaculos)
 
 function desenharEstrada(){
 for(i = 0; i < segmentos.length; i++){
@@ -40,9 +42,9 @@ for(i = 0; i < segmentos.length; i++){
     ctx.lineTo((canvas.width/2) - (p1.width/2), p1.telaY)
     ctx.closePath()
      if(i == 950){
-    ctx.fillStyle = '#fff'
+      ctx.fillStyle = '#fff'
     } else{
-    ctx.fillStyle = segmentos[i].color
+      ctx.fillStyle = segmentos[i].color
     }
     ctx.fill()
 
@@ -63,6 +65,11 @@ for(i = 0; i < segmentos.length; i++){
     ctx.closePath()
     ctx.fillStyle = segmentos[i].colorZebra
     ctx.fill()
+
+    //Caso o jogador passe da linha de chegada, finaliza o jog
+    if(i == 950 && z1 <= 0){
+      finalizarJogo()
+    }
     
 }
 
@@ -70,20 +77,18 @@ for(i = 0; i < segmentos.length; i++){
 for (let i = 0; i < obstaculos.length; i++) {
   let zRelativo = obstaculos[i].z - jogadorZ;
 
+  //Carregando a localidade do obstáculo
   let ob = projecao(zRelativo);
   let screenX = (canvas.width / 2) - (ob.width / 2) + ob.width * obstaculos[i].o;
 
+  //desenhando o obstáculo
   ctx.drawImage(obstaculoImg, screenX, ob.telaY, ob.width / 6, ob.width / 6)
 
-  if((((xCarro+ wCarro/2) >= screenX && xCarro <= screenX + 3) || ((xCarro+ wCarro/2) <= screenX && xCarro >= screenX - 3))  && ((yCarro+hCarro) >= ob.telaY && yCarro <= ob.telaY)){
-     jogadorZ -= 50
-    colisao++
+  //Desacelerar caso o carro bata no obstáculo
+  if((((xCarro+ wCarro/2) >= screenX && xCarro <= screenX + 3) || ((xCarro+ wCarro/2) <= screenX && xCarro >= screenX - 3))  && ((yCarro+hCarro/2) >= ob.telaY && yCarro <= ob.telaY-30)){
+     jogadorZ -= 23
+     obstaculos[i].colisao = 1
   }
-
-  console.log(colisao)
-
 }
-
 }
-
 

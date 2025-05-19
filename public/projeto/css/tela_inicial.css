@@ -217,7 +217,7 @@ video{
     flex-direction: column;
 }
 
-.whapper {
+.whapper .title_pilotos{
     font-family: 'upheavtt';
     font-size: 40px;
     color: #fff;

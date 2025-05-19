@@ -27,36 +27,112 @@
     <!-- Personagens -->
      <div class="personagens">
         <div class="container">
-            <div class="card_personagem">
-                <img src="img/pilotos2d/Rubens.jpg" alt="">
-                <p>RUBENS <br> BARRICHELLO</p>
-             </div>
-             <div class="card_personagem">
-                <img src="img/pilotos2d/Prost.png" alt="">
-                <p>ALAN <br> PROST</p>
-             </div>
-             <div class="card_personagem">
-                <img src="img/pilotos2d/Nelson Piquet.jpg" alt="">
-                <p>NELSON <br> PIQUET</p>
-             </div>
-             <div class="card_personagem">
-                <img src="img/pilotos2d/Max Verstappen.webp" alt="">
-                <p>MAX <br> VERSTAPPEN</p>
-             </div>
-             <div class="card_personagem">
-                <img src="img/pilotos2d/Lewis.png" alt="">
-                <p>LEWIS <br> HAMILTON</p>
-             </div>
-             <div class="card_personagem">
-                <img src="img/pilotos2d/Schumacher.jpg" alt="">
-                <p>MICHAEL <br> SCHUMACHER</p>
-             </div>
-             <div class="card_personagem">
-                <img src="img/pilotos2d/Senna.jpg" alt="">
-                <p>AYRTON <br> SENNA</p>
-             </div>
+         <!-- Cards -->
+        </div>
+     </div>
+
+     <!-- Escolhido -->
+     <div class="escolhido">
+        <div class="container">
+         
         </div>
      </div>
      
 </body>
 </html>
+
+<script>
+   const personagens = document.querySelector('.personagens');
+   const container = document.querySelector('.personagens .container');
+   const escolhido = document.querySelector('.escolhido');
+   const containerEscolhido = document.querySelector('.escolhido .container');
+   let ID_USUARIO = sessionStorage.getItem('ID_USUARIO');
+   var id;
+   
+  fetch('personagens.json')
+  .then(response => response.json())
+  .then(personagem => {
+    personagem.forEach(personagem => {
+      const div = document.createElement('div');
+      div.className = 'card_personagem';
+      div.innerHTML = `
+        <img src="${personagem.imagem}" alt="">
+         <p>${personagem.nome} <br> ${personagem.sobrenome}</p>
+      `;
+      personagens.appendChild(container);
+      container.appendChild(div);
+
+      div.addEventListener("click", function(){
+         id = personagem.id
+         console.log(id)
+
+         if(id == personagem.id){
+            containerEscolhido.innerHTML = `
+               <img src="${personagem.imagemEscolhido}" alt="">
+               <div class="personagem_escolhido">
+                  <p>${personagem.nome} ${personagem.sobrenome}</p>
+                  <button onclick="cadastrar()" class="btn_iniciar">Iniciar</button>
+               </div>
+               `;
+         escolhido.appendChild(containerEscolhido);
+         }
+   })
+    });
+  });
+
+    function cadastrar() {
+    // aguardar();
+
+    //Recupere o valor da nova input pelo nome do id
+    // Agora vá para o método fetch logo abaixo
+    var fkUsuarioVar = ID_USUARIO;
+    var fkPersonagemVar = id;
+
+    // Verificando se há algum campo em branco
+    if (
+      fkUsuarioVar == "" ||
+      fkPersonagemVar == "" 
+    ) {
+      cardErro.style.display = "block";
+      alert('(Mensagem de erro para todos os campos em branco)');
+
+      return false;
+    } 
+    else {
+      setInterval(5000);
+    }
+
+    // Enviando o valor da nova input
+    fetch("/partida/cadastrarPartida", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        // crie um atributo que recebe o valor recuperado aqui
+        // Agora vá para o arquivo routes/usuario.js
+        fkUsuarioServer: fkUsuarioVar,
+        fkPersonagemServer: fkPersonagemVar,
+      }),
+    })
+      .then(function (resposta) {
+        console.log("resposta: ", resposta);
+
+        if (resposta.ok) {
+            alert('Cadastro de partida realizado com sucesso! Redirecionando para tela de jogo...');
+
+          setTimeout(() => {
+            window.location = `carRacing/index.html?id=${id}`;
+          }, "2000");
+
+        } else {
+          throw "Houve um erro ao tentar realizar o cadastro!";
+        }
+      })
+      .catch(function (resposta) {
+        console.log(`#ERRO: ${resposta}`);
+      });
+
+    return false;
+  }
+</script>
