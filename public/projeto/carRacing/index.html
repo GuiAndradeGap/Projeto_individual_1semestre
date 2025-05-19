@@ -6,9 +6,9 @@
     <link rel="stylesheet" href="style.css">
     <title>Car Racing</title>
 </head>
-<body>
-    <h1>Jogo de Carro</h1>
-    <button onclick="jogo()">Restart</button>
+<body onload="buscarPartida()">
+    <h1 id="div_jogo">Jogo de Carro</h1>
+    <button>Restart</button>
     <canvas id="canvas" width="800" height="600"></canvas>
 </body>
 </html>
@@ -18,3 +18,4 @@
 <script src="js/estrada.js"></script>
 <script src="js/camera.js"></script>
 <script src="js/mov.js"></script>
+<script src="js/buscarPartida.js"></script>

@@ -1,6 +1,8 @@
 const canvas = document.getElementById('canvas') 
 const ctx = canvas.getContext("2d") 
 const video = document.querySelector('video')
+var JogoRodando = true
+var loopDoJogo
 
 //Posição do jogador
 let jogadorZ = 0 
@@ -33,7 +35,10 @@ function velocidadeCarro(){
 }
 
 function jogo(){
-setInterval(() =>{
+loopDoJogo = setInterval(() =>{
+    if(JogoRodando == false){
+        clearInterval(loopDoJogo); // ← para o loop se o jogo parar
+    }
     ctx.clearRect(0, 0, canvas.width, canvas.height)
     velocidadeCarro()
     desenharGrama()
@@ -43,6 +48,26 @@ setInterval(() =>{
 }, 1000/60)
 }
 
+//Finalizando jogo
+function finalizarJogo(){
+
+JogoRodando = false
+
+if(JogoRodando == false){
+//obstáculo
+for (let i = 0; i < obstaculos.length; i++) {
+  totalColisao += obstaculos[i].colisao
+}
+}
+
+console.log(obstaculos)
+div_jogo.innerHTML  = totalColisao
+
+}
+
 jogo()
+
+
+
 
 
