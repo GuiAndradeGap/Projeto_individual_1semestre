@@ -1,0 +1,281 @@
+
+* {
+    box-sizing: inherit;
+    padding: 0;
+    margin: 0;
+  font-family: "Poppins", sans-serif;
+}
+
+.container_geral {
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+    width: 100vw;
+    flex-direction: row;
+}
+
+/* BARRA LATERAL */
+
+.barra_lateral {
+    background-color: #0C1314 ;
+    height: 100vh;
+    width: 10vw;
+}
+
+.lateral_container {
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.lateral_container img {
+    width: 90%;
+}
+
+.tala_dashboard{
+    display: flex;
+    flex-direction: column;
+    gap: 3%;
+}
+
+/* HEADER */
+
+.header {
+    background-color: #121B1C;
+    height: 3vw;
+    width: 90vw;
+    color: #fff;
+}
+
+.header_container  {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+}
+
+
+.header_div1 h1 {
+    font-size: 18px;
+    padding: 0px 20px;
+    font-weight: normal;
+}
+
+.header_div2 h1 {
+    font-size: 18px;
+    padding: 0px 20px;
+    font-weight: normal;
+}
+
+
+/*Conteúdo Principal*/
+
+.conteudo_principal {
+    background-color: #FFFFFF;
+    height: 93.4%; 
+    width:  100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.conteudo_principal_div {
+    background-color: rgb(255, 255, 255);
+    width: 97%;
+    height: 98%;
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
+}
+
+
+/* PRIMEIRA ZONA */
+
+.zona_1 {
+    width: 100%;
+    height: 8vh;  
+    display: flex;
+}
+
+.temp {
+    width: 20%;        
+    height: 100%    ;      
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    align-items: center;
+    overflow: hidden;    /* impede vazamento de conteúdo */
+    flex-direction: column;
+}
+
+.temp div {
+    display: flex;
+    justify-content: start;
+    width: 100%;
+    gap: 20px;
+    height: 100px;
+    align-items: center;
+}
+
+
+#id_vitoria{
+    width: 85px;
+    height: 25px;
+    background-color: #155FDE;
+    border-radius: 5px; 
+    font-size: 10px;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#id_derrota{
+    width: 85px;
+    height: 25px;
+    background-color: #FF0000;
+    border-radius: 5px;
+    font-size: 10px;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.temp p {
+    font-size: 15px;
+    overflow: hidden;    /* impede que a imagem vaze */
+}
+
+/*KPIs*/
+
+.KPI_container {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    background-color: rgb(255, 255, 255);
+    width: 100%;
+}
+
+.KPIs {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+   
+}
+
+.KPI {
+    width: 100%;
+    background-color: #F5F5F5;
+    border-radius: 10px;
+    overflow: hidden;    /* impede que o conteúdo vaze */
+    padding: 5px 20px;
+    height: 100%;
+    gap: 20px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+
+.KPI .title_kpi{
+    font-size: 17px;
+}
+
+.KPI div p {
+    font-size: 22px;
+}
+
+
+/* ZONA 2 */
+
+.zona_2 {
+    width: 100%;
+    height: 42%;
+}
+
+.graficos {
+    display: flex;
+    gap: 20px;
+    height: 100%;
+}
+
+.grafico1 {
+    width: 70%;
+    height:100%;
+    background-color: #F5F5F5;
+    border-radius: 10px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.graf01{
+    width: 95%;
+    height: 80%;
+}
+
+.grafico2 { 
+    width: 50%;
+    height:100% ;
+    background-color: #F5F5F5;
+    border-radius: 10px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.graf02{
+    width: 40%;
+    height: 85%;
+}
+
+/* ZONA 3 */ 
+
+.zona_3 {
+    width: 100%;
+    background-color: rgb(42, 42, 165);
+    background-color: rgb(255, 255, 255);
+    height: 35%;
+}
+
+.grafico_final {
+    width: 100%;
+    background-color: #F5F5F5;
+    height: 100%;
+    border-radius: 10px;
+    box-shadow: 2px 5px 5px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.graf03{
+    width: 97%;
+    height: 77%;
+}
+
+/* Legendas dos gráficos */
+.title_button{
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.title_button p {
+    margin-right: 30%;
+    margin-left: 2%;
+}

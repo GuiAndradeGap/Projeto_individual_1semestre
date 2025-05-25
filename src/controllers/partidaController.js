@@ -41,11 +41,12 @@ function buscarUltimaPartida(req, res) {
 }
 
 function atualizarPartida(req, res) {
-    var id = req.body.id;
-    var tempo = req.params.id;
-    var colisao = req.params.colisao;
+    var idPartida = req.body.idPartida;
+    var tempo = req.body.tempo;
+    var colisao = req.body.colisao;
+    var resultadoPartida  = req.body.resultadoPartida
 
-    partidaModel.atualizarPartida(id, tempo, colisao)
+    partidaModel.atualizarPartida(idPartida, tempo, colisao, resultadoPartida)
         .then(
             function (resultado) {
                 res.json(resultado);
@@ -60,6 +61,7 @@ function atualizarPartida(req, res) {
         );
 
 }
+
 
 module.exports = {
     cadastrarPartida,

@@ -21,11 +21,10 @@ function buscarUltimaPartida(ID_USUARIO) {
 }
 
 //Atualizando a partida
-function atualizarPartida(id, tempo, colisao) {
-    console.log("ACESSEI O AVISO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function editar(): ");
+function atualizarPartida(idPartida, tempo, colisao, resultadoPartida) {
+    console.log("ACESSEI O AVISO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function editar(): ", idPartida, tempo, colisao);
     var instrucaoSql = `
-        UPDATE partida SET tempo = '${tempo}' AND colisao = '${colisao}' WHERE id = ${id};
-    `;
+        UPDATE partida SET tempo = ${tempo}, colisoes = ${colisao}, resultadoPartida = ${resultadoPartida} WHERE idPartida = ${idPartida};`;
     console.log("Executando a instrução SQL: \n" + instrucaoSql);
     return database.executar(instrucaoSql);
 }

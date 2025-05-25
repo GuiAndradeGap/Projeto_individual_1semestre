@@ -12,4 +12,8 @@ router.get("/buscarUltimaPartida/:ID_USUARIO", function (req, res) {
   partidaController.buscarUltimaPartida(req, res);
 });
 
+router.put("/atualizarPartida/:idPartida", function (req, res) {
+    partidaController.atualizarPartida(req, res);
+});
+
 module.exports = router;

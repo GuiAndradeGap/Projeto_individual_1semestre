@@ -3,6 +3,9 @@ tamanhoSegmento = 100
 segmentos = []
 obstaculos = []
 var totalColisao = 0
+var tempo = 65
+var colisao = []
+var resultadoPartida = 0
 
 //Obstáculo
 const obstaculoImg = new Image()
@@ -17,14 +20,14 @@ for(i = 1;i <= 1000;i++){
     })
 }
 
-for (i = 0; i < 150; i++) {
+for (i = 0; i < 100; i++) {
   let o = Math.random()
-  let z = Math.random() * (1000 * (tamanhoSegmento+100)) + 5000
+  let z = Math.random() * (100000) + 5000
   obstaculos.push({ 
     z, 
-    o,
-    colisao: 0
+    o
   })
+  colisao.push(0)
 }
 
 function desenharEstrada(){
@@ -66,9 +69,17 @@ for(i = 0; i < segmentos.length; i++){
     ctx.fillStyle = segmentos[i].colorZebra
     ctx.fill()
 
-    //Caso o jogador passe da linha de chegada, finaliza o jog
+    //Caso o jogador passe da linha de chegada, finaliza o jogo
     if(i == 950 && z1 <= 0){
       finalizarJogo()
+      //Chamar a função de update
+      if(tempo > 0){
+        tempo = 65-tempo
+        resultadoPartida = 1
+      } else{
+        tempo = 65+tempo
+      }
+      atualizarPartida(idPartida, totalColisao/2, tempo, resultadoPartida)
     }
     
 }
@@ -85,9 +96,9 @@ for (let i = 0; i < obstaculos.length; i++) {
   ctx.drawImage(obstaculoImg, screenX, ob.telaY, ob.width / 6, ob.width / 6)
 
   //Desacelerar caso o carro bata no obstáculo
-  if((((xCarro+ wCarro/2) >= screenX && xCarro <= screenX + 3) || ((xCarro+ wCarro/2) <= screenX && xCarro >= screenX - 3))  && ((yCarro+hCarro/2) >= ob.telaY && yCarro <= ob.telaY-30)){
+  if((((xCarro+ wCarro/2) >= screenX && xCarro <= screenX + 3) || ((xCarro+ wCarro/2) <= screenX && xCarro >= screenX - 3))  && ((yCarro+hCarro/2) >= ob.telaY && yCarro <= ob.telaY-35)){
      jogadorZ -= 23
-     obstaculos[i].colisao = 1
+     colisao[i] = 1
   }
 }
 }
