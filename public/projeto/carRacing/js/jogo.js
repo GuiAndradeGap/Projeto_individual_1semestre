@@ -13,6 +13,18 @@ carro.src = '../img/carros_f1/carro.png';
 const paisagem = new Image()
 paisagem.src = '../img/paisagem.jpg';
 
+function cronometrar(){
+tempoParida = setInterval(() =>{
+    if(JogoRodando == false){
+        clearInterval(tempoParida); // ← para o loop se o jogo parar
+    }
+    else{
+        tempo--
+        div_jogo.innerHTML = tempo
+    }
+}, 1000)
+}
+cronometrar()
 
 // Desenhando o carro
 function desenharCarro(){
@@ -56,13 +68,10 @@ JogoRodando = false
 if(JogoRodando == false){
 //obstáculo
 for (let i = 0; i < obstaculos.length; i++) {
-  totalColisao += obstaculos[i].colisao
+  totalColisao += colisao[i]
 }
 }
-
 console.log(obstaculos)
-div_jogo.innerHTML  = totalColisao
-
 }
 
 jogo()
