@@ -279,3 +279,10 @@
     margin-right: 30%;
     margin-left: 2%;
 }
+
+#primeiroLugar{
+    height: 20px;
+    width: 20px;
+    border-radius: 3px;
+    color: yellow;
+}

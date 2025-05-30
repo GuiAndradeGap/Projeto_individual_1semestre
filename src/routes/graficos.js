@@ -20,4 +20,10 @@ router.get("/BuscarVitoriasDerrotas/:ID_USUARIO", function (req, res) {
   graficosController.BuscarVitoriasDerrotas(req, res);
 });
 
+//Gráfico 3
+router.get("/rankeandoTempo", function (req, res) {
+  graficosController.rankeandoTempo(req, res);
+});
+
+
 module.exports = router;

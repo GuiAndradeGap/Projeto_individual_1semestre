@@ -3,13 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/navbar.css">
     <link rel="stylesheet" href="style.css">
     <title>Car Racing</title>
 </head>
 <body onload="buscarPartida()">
-    <h1 id="div_jogo">Jogo de Carro</h1>
-    <button>Restart</button>
-    <canvas id="canvas" width="800" height="600"></canvas>
+     <div class="navbar">
+        <div class="container">
+            <div class="logo"></div>
+
+        </div>
+    </div>
+
+    <div class="jogo">
+        <div class="container">
+            <div class="info_jogo">
+                <p>Cronômetro:</p>
+                <p id="cronometro">00:00</p>  
+                <div class="info_personagem">
+            
+                </div>
+            </div>
+
+            <!-- Jogo -->
+            <canvas id="canvas" width="800" height="550"></canvas>
+        </div>
+    </div>
 </body>
 </html>
 
@@ -19,3 +38,25 @@
 <script src="js/estrada.js"></script>
 <script src="js/camera.js"></script>
 <script src="js/mov.js"></script>
+
+<script>
+    const urlParams = new URLSearchParams(window.location.search);
+    const id_perso = parseInt(urlParams.get("id")); 
+    
+    const info_personagem = document.querySelector('.info_personagem');
+    console.log(id_perso)
+
+    fetch('../personagens.json')
+  .then(response => response.json())
+  .then(personagem => {
+     const id_personagem = personagem.find(p => p.id === id_perso);
+
+     if(id_personagem){
+        info_personagem.innerHTML =  `
+            <img src="../${id_personagem.imagemEscolhido}" alt="">
+            <p class="nome_personagem">${id_personagem.nome} <br> ${id_personagem.sobrenome}</p>
+        `
+     }
+  });
+
+</script>

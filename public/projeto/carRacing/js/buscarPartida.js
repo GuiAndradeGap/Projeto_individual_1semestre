@@ -1,4 +1,4 @@
- let id = sessionStorage.getItem('ID_USUARIO');
+ let id = sessionStorage.getItem('ID_USUARIO')
  var idPartida
  
  function buscarPartida() {

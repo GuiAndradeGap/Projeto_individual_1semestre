@@ -104,3 +104,10 @@ body{
     background-size: cover;
     background-position: 0px -30vh;
 }
+
+/*Styles de validações*/
+.campo div{
+    margin-top: 3px;
+    font-size: 10px;
+    color: #FF1010; 
+}

@@ -2,7 +2,7 @@
   {
     "video": "video/max.mp4",
     "nome": "Max Verstappen",
-    "imagem": "https://lojaautoformula.com.br/cdn/shop/collections/AF_FEED_IG_REDBULL_-_2023-10-10T221600.481.png?v=1741615741&width=1296",
+    "imagem": "img/Pilotos/max.png",
     "descricao": "Max Verstappen é um piloto holandês, tricampeão mundial, competindo pela equipe RB",
     "numero": 1,
     "equipe": "Red Bull Racing",
@@ -17,7 +17,7 @@
   {
     "video": "video/max.mp4",
     "nome": "Lewis Hamilton",
-    "imagem": "https://lojaautoformula.com.br/cdn/shop/collections/AF_FEED_IG_REDBULL_-_2023-10-10T221525.428.png?v=1741615321&width=1296",
+    "imagem": "img/Pilotos/hamilton.png",
     "descricao": "Lewis Hamilton é sete vezes campeão mundial, competindo pela equipe Ferrari.",
     "numero": 44,
     "equipe": "Ferrari",
@@ -32,7 +32,7 @@
   {
     "video": "video/charle.mp4",
     "nome": "Charles Leclerc",
-    "imagem": "https://lojaautoformula.com.br/cdn/shop/collections/AF_FEED_IG_REDBULL_-_2023-10-10T221923.446.png?v=1741615198&width=1296",
+    "imagem": "img/Pilotos/leclerc.png",
     "descricao": "Charles Leclerc é um piloto monegasco, competindo pela equipe Ferrari desde 2019.",
     "numero": 16,
     "equipe": "Ferrari",
@@ -47,7 +47,7 @@
   {
     "video": "video/bortolleto.mp4",
     "nome": "Lando Norris",
-    "imagem": "https://lojaautoformula.com.br/cdn/shop/collections/AF_FEED_IG_REDBULL_-_2023-10-10T221800.574.png?v=1741615285&width=1296",
+    "imagem": "img/Pilotos/norris.png",
     "descricao": "Lando Norris é um piloto britânico, competindo pela equipe McLaren desde sua estreia na F1.",
     "numero": 4,
     "equipe": "McLaren",
@@ -62,7 +62,7 @@
   {
     "video": "video/bortolleto.mp4",
     "nome": "Oscar Piastri",
-    "imagem": "https://lojaautoformula.com.br/cdn/shop/collections/AF_FEED_IG_REDBULL_-_2023-10-10T221825.135.png?v=1741615267&width=1296",
+    "imagem": "img/Pilotos/piastri.png",
     "descricao": "Oscar Piastri é um piloto australiano, competindo pela equipe McLaren desde 2023.",
     "numero": 81,
     "equipe": "McLaren",
@@ -77,7 +77,7 @@
   {
     "video": "video/bortolleto.mp4",
     "nome": "George Russell",
-    "imagem": "https://lojaautoformula.com.br/cdn/shop/collections/AF_FEED_IG_REDBULL_-_2023-10-10T221542.424.png?v=1744049781&width=1296",
+    "imagem": "img/Pilotos/russel.png",
     "descricao": "George Russell é um piloto britânico, competindo pela equipe Mercedes desde 2022.",
     "numero": 63,
     "equipe": "Mercedes",
@@ -92,7 +92,7 @@
   {
     "video": "video/bortolleto.mp4",
     "nome": "Andrea Kimi Antonelli",
-    "imagem": "https://www.formula1.com/content/dam/fom-website/drivers/2025Drivers/antonelli.jpg",
+    "imagem": "img/Pilotos/antonelli.png",
     "descricao": "Andrea Kimi Antonelli é um piloto italiano, estreando na F1 pela equipe Mercedes em 2025.",
     "numero": 12,
     "equipe": "Mercedes",
@@ -107,7 +107,7 @@
   {
     "video": "video/bortolleto.mp4",
     "nome": "Fernando Alonso",
-    "imagem": "https://www.formula1.com/content/dam/fom-website/drivers/2025Drivers/alonso.jpg",
+    "imagem": "img/Pilotos/alonso.png",
     "descricao": "Fernando Alonso é um piloto espanhol, bicampeão mundial, da equipe Aston Martin.",
     "numero": 14,
     "equipe": "Aston Martin",
@@ -122,7 +122,7 @@
   {
     "video": "video/bortolleto.mp4",
     "nome": "Lance Stroll",
-    "imagem": "https://www.formula1.com/content/dam/fom-website/drivers/2025Drivers/stroll.jpg",
+    "imagem": "img/Pilotos/stroll.png",
     "descricao": "Lance Stroll é um piloto canadense, competindo pela equipe Aston Martin desde 2019.",
     "numero": 18,
     "equipe": "Aston Martin",
@@ -137,7 +137,7 @@
   {
     "video": "video/bortolleto.mp4",
     "nome": "Yuki Tsunoda",
-    "imagem": "https://www.formula1.com/content/dam/fom-website/drivers/2025Drivers/tsunoda.jpg",
+    "imagem": "img/Pilotos/tsunoda.png",
     "descricao": "Yuki Tsunoda é um piloto japonês, competindo pela equipe RB desde 2021.",
     "numero": 22,
     "equipe": "RB (Racing Bulls)",
@@ -152,7 +152,7 @@
   {
     "video": "video/bortolleto.mp4",
     "nome": "Isack Hadjar",
-    "imagem": "https://www.formula1.com/content/dam/fom-website/drivers/2025Drivers/hadjar.jpg",
+    "imagem": "img/Pilotos/hadjar.png",
     "descricao": "Isack Hadjar é um piloto francês, estreando na F1 pela equipe RB em 2025.",
     "numero": 6,
     "equipe": "RB (Racing Bulls)",
@@ -167,7 +167,7 @@
   {
     "video": "video/bortolleto.mp4",
     "nome": "Esteban Ocon",
-    "imagem": "https://www.formula1.com/content/dam/fom-website/drivers/2025Drivers/ocon.jpg",
+    "imagem": "img/Pilotos/ocon.png",
     "descricao": "Esteban Ocon é um piloto francês, competindo pela equipe Haas desde 2025.",
     "numero": 31,
     "equipe": "Haas",
@@ -182,7 +182,7 @@
   {
     "video": "video/bortolleto.mp4",
     "nome": "Oliver Bearman",
-    "imagem": "https://www.formula1.com/content/dam/fom-website/drivers/2025Drivers/bearman.jpg",
+    "imagem": "img/Pilotos/bearman.png",
     "descricao": "Jovem piloto britânico que estreou na Fórmula 1 pela equipe Haas.",
     "numero": 87,
     "equipe": "Haas",
@@ -197,7 +197,7 @@
   {
     "video": "video/bortolleto.mp4",
     "nome": "Alexander Albon",
-    "imagem": "https://www.formula1.com/content/dam/fom-website/drivers/2025Drivers/albon.jpg",
+    "imagem": "img/Pilotos/albon.png",
     "descricao": "Alex Albon é um piloto tailandês, correndo pela equipe Williams desde 2022.",
     "numero": 23,
     "equipe": "Williams",
@@ -272,7 +272,7 @@
   {
     "video": "video/bortolleto.mp4",
     "nome": "Gabriel Bortoleto",
-    "imagem": "https://www.formula1.com/content/dam/fom-website/drivers/2025Drivers/bortoleto.jpg",
+    "imagem": "img/Pilotos/bortoleto.png",
     "descricao": "Gabriel Bortoleto é um piloto brasileiro que estreou na Fórmula 1 em 2025.",
     "numero": 5,
     "equipe": "Stake F1 Team Kick Sauber",
