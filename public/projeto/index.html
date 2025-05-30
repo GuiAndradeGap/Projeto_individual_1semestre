@@ -31,7 +31,7 @@
               <a href="#">Home</a>
             </li>
             <li>
-              <a href="">CarRacing</a>
+              <a onclick="redirecionarJogo()">CarRacing</a>
             </li>
             <li>
               <a href="cadastro.html">Entrar</a>
@@ -105,5 +105,14 @@
     });
   });
 
-  
+let ID_USUARIO = sessionStorage.getItem('ID_USUARIO');
+
+function redirecionarJogo(){
+  if(ID_USUARIO != undefined){
+    window.location = 'selecao_personagem.html'
+  }
+  else{
+    alert('Você precisa se logar para jogar')
+  }
+}
 </script>

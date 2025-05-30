@@ -10,9 +10,13 @@ function buscarKPI(ID_USUARIO) {
                 response.json().then(function (resposta04) {
                     console.log(`Dados recebidos: ${JSON.stringify(resposta04)}`);
                     //Plotando os dados
-                    tempoPartida.innerHTML = resposta04[0].tempo
-                    colisoesPartida.innerHTML = resposta04[0].colisoes
-                    console.log(resposta04[0].resultadoPartida)
+                    if(resposta04[0].tempo != null){
+                        tempoPartida.innerHTML = resposta04[0].tempo
+                    }
+                    if(resposta04[0].colisoes != null){
+                        colisoesPartida.innerHTML = resposta04[0].colisoes
+                    }
+                    
                     if(resposta04[0].resultadoPartida == 1){
                         situacaoPartida.innerHTML = '<p style="color: #155FDE">Vitória</p>'
                     } else if(resposta04[0].resultadoPartida == 0){
@@ -75,10 +79,17 @@ new Chart(grafico1, {
                 ticks: {
                     stepSize: 2
                   }
-            },
-            
+            }, 
+        },
+        plugins: {
+        datalabels: {
+          anchor: 'end',
+          align: 'end',
+          color: '#000'
         }
-    }
+      }
+    },
+    plugins: [ChartDataLabels] 
 });
 }
 
@@ -132,21 +143,41 @@ BuscarVitoriasDerrotas(ID_USUARIO);
 
 
 
+//Gráfico 03
+//Buscando informações
+function rankeandoTempo(){
+        fetch(`/graficos/rankeandoTempo`, { cache: 'no-store' }).then(function (response) {
+            if (response.ok) {
+                response.json().then(function (resposta03) {
+                    console.log(`Dados recebidos: ${JSON.stringify(resposta03)}`);
+                    plotarGrafico03(resposta03)
+                });
+            } else {
+                console.error('Nenhum dado encontrado ou erro na API');
+            }
+        })
+        .catch(function (error) {
+            console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
+        });
+}
 
+rankeandoTempo()
+
+function plotarGrafico03(resposta03) {
 const grafico3 = document.getElementById('myChart03');
 
 new Chart(grafico3, {
     type: 'bar',
     data: {
-        labels: ['Guilherme', 'Otávio', 'Gustavo', 'Paulo', 'Caio', 'Dias','Alex','Gabriel','Rodrigo','Rafael'],
+        labels: [`1º - ${resposta03[0].nomeUsuario}`, `2º - ${resposta03[1].nomeUsuario}`, `3º - ${resposta03[2].nomeUsuario}`, resposta03[3].nomeUsuario, 
+        resposta03[4].nomeUsuario, resposta03[5].nomeUsuario,resposta03[6].nomeUsuario,resposta03[7].nomeUsuario, resposta03[8].nomeUsuario,resposta03[9].nomeUsuario],
         datasets: [
         {
-            label: 'Quantidade de Vitórias',
-            backgroundColor: '#155FDE',
-            borderColor: ' #155FDE',
+            label: 'Tempo em segundos',
+            backgroundColor: ' #002F49',
             borderRadius: 3,
-            data: [46,45,40,35,32,30,28,26,24,22,20,18],
-            borderWidth: 2,
+            data: [resposta03[0].tempoPartida, resposta03[1].tempoPartida, resposta03[2].tempoPartida, resposta03[3].tempoPartida, 
+            resposta03[4].tempoPartida, resposta03[5].tempoPartida,resposta03[6].tempoPartida,resposta03[7].tempoPartida, resposta03[8].tempoPartida,resposta03[9].tempoPartida],
             pointStyle: false
         }
         ]
@@ -156,13 +187,22 @@ new Chart(grafico3, {
         scales: {
             y: {
                 min: 0,
-                max: 50,
+                max: 100,
                 beginAtZero: true,
                 ticks: {
                     stepSize: 10
                   }
             },
             
+        },
+        plugins: {
+        datalabels: {
+          anchor: 'end',
+          align: 'end',
+          color: '#000'
         }
-    }
+      }
+    },
+    plugins: [ChartDataLabels] 
 });
+}

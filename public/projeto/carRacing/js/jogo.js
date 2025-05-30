@@ -16,14 +16,33 @@ paisagem.src = '../img/paisagem.jpg';
 function cronometrar(){
 tempoParida = setInterval(() =>{
     if(JogoRodando == false){
-        clearInterval(tempoParida); // ← para o loop se o jogo parar
+        clearInterval(tempoParida); // para o loop se o jogo parar
     }
     else{
-        tempo--
-        div_jogo.innerHTML = tempo
+        tempo++
+        minuto = (tempo/60).toFixed()
+        segundo = tempo%60
+
+        if(tempo < 60){
+            if(tempo < 10){
+                cronometro.innerHTML = `00:0${tempo}`
+            }
+            else{
+                cronometro.innerHTML = `00:${tempo}`
+            }
+        }
+        else{
+            if(segundo < 10){
+                cronometro.innerHTML = `0${minuto}:0${segundo}`
+            }
+            else{
+                cronometro.innerHTML = `0${minuto}:${segundo}`
+            }
+        }
     }
 }, 1000)
 }
+
 cronometrar()
 
 // Desenhando o carro

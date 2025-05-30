@@ -53,6 +53,8 @@ body{
 .campo {
     width: 100%;
     margin-top: 3%;
+    display: flex;
+    flex-direction: column;
 }
 
 .campo input{
@@ -103,4 +105,11 @@ body{
     background-image: url(../img/banner_cadastro.jpg);
     background-size: cover;
     background-position: 0px -30vh;
+}
+
+/*Styles de validações*/
+.campo div{
+    margin-top: 3px;
+    font-size: 10px;
+    color: #FF1010; 
 }

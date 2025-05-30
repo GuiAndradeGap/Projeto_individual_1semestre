@@ -25,6 +25,7 @@
                     </div>
                     <div class="campo">
                         <input type="text" id="input_senha" placeholder="Senha">
+                        <div id="campo_vazio"></div>
                     </div>
                     <div class="card_login_btn">
                         <p>Não tem conta? <br> <a href="cadastro.html">cadastre-se</a></p>
@@ -39,19 +40,17 @@
 
 <script>
     function entrar() {
-        // aguardar();
+    var emailVar = input_email.value;
+    var senhaVar = input_senha.value;
 
-        var emailVar = input_email.value;
-        var senhaVar = input_senha.value;
-
-        if (emailVar == "" || senhaVar == "") {
-            Alert("(Mensagem de erro para todos os campos em branco)");
-            // finalizarAguardar();
-            return false;
-        }
-        else {
-            setInterval(5000)
-        }
+    //Validações
+    if (emailVar == "" || senhaVar == "" ) {
+        campo_vazio.innerHTML = `Campos vazios`
+        return false;
+    } 
+    else {
+      setInterval(5000);
+    }
 
         console.log("FORM LOGIN: ", emailVar);
         console.log("FORM SENHA: ", senhaVar);
@@ -80,7 +79,7 @@
 
                     setTimeout(function () {
                         alert('Parabéns, você está logado!');
-                        window.location = "selecao_personagem.html";
+                        window.location = "index.html";
                     }, 1000); // apenas para exibir o loading
 
                 });

@@ -15,7 +15,7 @@ function buscarPersonagem() {
 	                        JOIN personagens AS p
 		                        ON pa.fkPersonagem = p.id
 	                    GROUP BY pa.fkPersonagem
-                        ORDER BY pa.fkPersonagem
+                        ORDER BY COUNT(pa.idPartida) DESC
                         LIMIT 5;`;
 
   return database.executar(instrucaoSql);
@@ -30,9 +30,19 @@ function BuscarVitoriasDerrotas(ID_USUARIO) {
   return database.executar(instrucaoSql);
 }
 
+//Gráfico 03
+function rankeandoTempo() {
+  var instrucaoSql = `SELECT u.nome AS nomeUsuario, MIN(p.tempo) AS tempoPartida FROM partida AS p
+	                    JOIN usuarios AS u
+		                    ON p.fkUsuario = u.id
+                        GROUP BY u.id
+	                    ORDER BY MIN(p.tempo);`;
+  return database.executar(instrucaoSql);
+}
 
 module.exports = {
     buscarKPI,
     buscarPersonagem,
-    BuscarVitoriasDerrotas
+    BuscarVitoriasDerrotas,
+    rankeandoTempo
 };

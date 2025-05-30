@@ -3,9 +3,9 @@ tamanhoSegmento = 100
 segmentos = []
 obstaculos = []
 var totalColisao = 0
-var tempo = 65
+var tempo = 0
 var colisao = []
-var resultadoPartida = 0
+var resultadoPartida 
 
 //Obstáculo
 const obstaculoImg = new Image()
@@ -20,7 +20,7 @@ for(i = 1;i <= 1000;i++){
     })
 }
 
-for (i = 0; i < 100; i++) {
+for (i = 0; i < 150; i++) {
   let o = Math.random()
   let z = Math.random() * (100000) + 5000
   obstaculos.push({ 
@@ -73,11 +73,10 @@ for(i = 0; i < segmentos.length; i++){
     if(i == 950 && z1 <= 0){
       finalizarJogo()
       //Chamar a função de update
-      if(tempo > 0){
-        tempo = 65-tempo
+      if(tempo <= 60){
         resultadoPartida = 1
       } else{
-        tempo = 65+tempo
+        resultadoPartida = 0
       }
       atualizarPartida(idPartida, totalColisao/2, tempo, resultadoPartida)
     }

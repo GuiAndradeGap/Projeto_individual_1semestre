@@ -25,8 +25,16 @@ function BuscarVitoriasDerrotas(req, res) {
   });
 }
 
+//Gráfico 03
+function rankeandoTempo(req, res) {
+  graficosModel.rankeandoTempo().then((resultado) => {
+    res.status(200).json(resultado);
+  });
+}
+
 module.exports = {
     buscarKPI,
     buscarPersonagem,
-    BuscarVitoriasDerrotas
+    BuscarVitoriasDerrotas,
+    rankeandoTempo
 }
