@@ -11,7 +11,7 @@ router.get("/buscarKPI/:ID_USUARIO", function (req, res) {
 });
 
 //Gráfico 1
-router.get("/buscarPersonagem", function (req, res) {
+router.get("/buscarPersonagem/:ID_USUARIO", function (req, res) {
   graficosController.buscarPersonagem(req, res);
 });
 
@@ -21,6 +21,11 @@ router.get("/BuscarVitoriasDerrotas/:ID_USUARIO", function (req, res) {
 });
 
 //Gráfico 3
+router.get("/BuscarTempoUsuario/:ID_USUARIO", function (req, res) {
+  graficosController.BuscarTempoUsuario(req, res);
+});
+
+//Ranking
 router.get("/rankeandoTempo", function (req, res) {
   graficosController.rankeandoTempo(req, res);
 });

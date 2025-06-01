@@ -11,7 +11,9 @@ function buscarKPI(req, res) {
 
 //Gráfico 01
 function buscarPersonagem(req, res) {
-  graficosModel.buscarPersonagem().then((resultado) => {
+  var ID_USUARIO = req.params.ID_USUARIO;
+
+  graficosModel.buscarPersonagem(ID_USUARIO).then((resultado) => {
     res.status(200).json(resultado);
   });
 }
@@ -26,6 +28,15 @@ function BuscarVitoriasDerrotas(req, res) {
 }
 
 //Gráfico 03
+function BuscarTempoUsuario(req, res) {
+  var ID_USUARIO = req.params.ID_USUARIO;
+
+  graficosModel.BuscarTempoUsuario(ID_USUARIO).then((resultado) => {
+    res.status(200).json(resultado);
+  });
+}
+
+//Ranking
 function rankeandoTempo(req, res) {
   graficosModel.rankeandoTempo().then((resultado) => {
     res.status(200).json(resultado);
@@ -36,5 +47,6 @@ module.exports = {
     buscarKPI,
     buscarPersonagem,
     BuscarVitoriasDerrotas,
+    BuscarTempoUsuario,
     rankeandoTempo
 }

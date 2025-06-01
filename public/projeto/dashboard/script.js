@@ -36,8 +36,8 @@ buscarKPI(ID_USUARIO)
 
 //Gráfico 01
 //Buscando informações
-function buscarPersonagem() {
-        fetch(`/graficos/buscarPersonagem`, { cache: 'no-store' }).then(function (response) {
+function buscarPersonagem(ID_USUARIO) {
+        fetch(`/graficos/buscarPersonagem/${ID_USUARIO}`, { cache: 'no-store' }).then(function (response) {
             if (response.ok) {
                 response.json().then(function (resposta) {
                     console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
@@ -93,7 +93,7 @@ new Chart(grafico1, {
 });
 }
 
-buscarPersonagem();
+buscarPersonagem(ID_USUARIO);
 
 //Gráfico 02
 //Buscando informações
@@ -130,9 +130,7 @@ function plotarGrafico02(resposta02) {
     options: {
       plugins: {
         datalabels: {
-          anchor: 'end',
-          align: 'end',
-          color: '#000'
+          color: '#fff'
         }
       }
     },
@@ -143,14 +141,14 @@ BuscarVitoriasDerrotas(ID_USUARIO);
 
 
 
-//Gráfico 03
+//Ranking
 //Buscando informações
 function rankeandoTempo(){
         fetch(`/graficos/rankeandoTempo`, { cache: 'no-store' }).then(function (response) {
             if (response.ok) {
                 response.json().then(function (resposta03) {
                     console.log(`Dados recebidos: ${JSON.stringify(resposta03)}`);
-                    plotarGrafico03(resposta03)
+                    criarCampoRanking(resposta03)
                 });
             } else {
                 console.error('Nenhum dado encontrado ou erro na API');
@@ -163,22 +161,67 @@ function rankeandoTempo(){
 
 rankeandoTempo()
 
-function plotarGrafico03(resposta03) {
+//Ranking  
+function criarCampoRanking(resposta03){
+    var medalhaNome = ``
+    
+    for(i = 0; i < resposta03.length; i++){
+        if(i == 0){
+            medalhaNome = `<div class="nome_posicao"><div class="posicao" style="background-color: #FFCE1E">${i + 1}</div><p>${resposta03[i].nomeUsuario}</p></div>`
+        }
+        else if(i == 1){
+            medalhaNome = `<div class="nome_posicao"><div class="posicao" style="background-color: #939393">${i + 1}</div><p>${resposta03[i].nomeUsuario}</p></div>`
+        }
+        else if(i == 2){
+            medalhaNome = `<div class="nome_posicao"><div class="posicao" style="background-color: #B06B42">${i + 1}</div><p>${resposta03[i].nomeUsuario}</p></div>`
+        }
+        else{
+            medalhaNome = `<div class="nome_posicao"><div class="posicao" style="background-color: #155FDE">${i + 1}</div><p>${resposta03[i].nomeUsuario}</p></div>`
+        }
+
+        tabela_ranking.innerHTML += `
+        <div class="campo_ranking">
+            ${medalhaNome}
+            <p>${resposta03[i].tempoPartida}s</p>
+        </div>`
+    }
+}
+
+
+//Gráfico 03
+function BuscarTempoUsuario(ID_USUARIO){
+        fetch(`/graficos/BuscarTempoUsuario/${ID_USUARIO}`, { cache: 'no-store' }).then(function (response) {
+            if (response.ok) {
+                response.json().then(function (resposta05) {
+                    console.log(`Dados recebidos: ${JSON.stringify(resposta05)}`);
+                    plotarGrafico03(resposta05)
+                });
+            } else {
+                console.error('Nenhum dado encontrado ou erro na API');
+            }
+        })
+        .catch(function (error) {
+            console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
+        });
+}
+
+BuscarTempoUsuario(ID_USUARIO)
+
+function plotarGrafico03(resposta05) {
 const grafico3 = document.getElementById('myChart03');
 
 new Chart(grafico3, {
-    type: 'bar',
+    type: 'line',
     data: {
-        labels: [`1º - ${resposta03[0].nomeUsuario}`, `2º - ${resposta03[1].nomeUsuario}`, `3º - ${resposta03[2].nomeUsuario}`, resposta03[3].nomeUsuario, 
-        resposta03[4].nomeUsuario, resposta03[5].nomeUsuario,resposta03[6].nomeUsuario,resposta03[7].nomeUsuario, resposta03[8].nomeUsuario,resposta03[9].nomeUsuario],
+        labels: [`${resposta05[0].data}`, `${resposta05[1].data}`, `${resposta05[2].data}`, resposta05[3].data, 
+        resposta05[4].data, resposta05[5].data,resposta05[6].data,resposta05[7].data, resposta05[8].data,resposta05[9].data],
         datasets: [
         {
             label: 'Tempo em segundos',
-            backgroundColor: ' #002F49',
-            borderRadius: 3,
-            data: [resposta03[0].tempoPartida, resposta03[1].tempoPartida, resposta03[2].tempoPartida, resposta03[3].tempoPartida, 
-            resposta03[4].tempoPartida, resposta03[5].tempoPartida,resposta03[6].tempoPartida,resposta03[7].tempoPartida, resposta03[8].tempoPartida,resposta03[9].tempoPartida],
-            pointStyle: false
+            backgroundColor: 'rgb(255, 115, 0)',
+            data: [resposta05[0].tempo, resposta05[1].tempo, resposta05[2].tempo, resposta05[3].tempo, 
+            resposta05[4].tempo, resposta05[5].tempo,resposta05[6].tempo,resposta05[7].tempo, resposta05[8].tempo,resposta05[9].tempo],
+            pointStyle: true
         }
         ]
     },
@@ -206,3 +249,4 @@ new Chart(grafico3, {
     plugins: [ChartDataLabels] 
 });
 }
+

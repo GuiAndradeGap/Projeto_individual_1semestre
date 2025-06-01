@@ -4,6 +4,11 @@
     font-family: "poppins", sans-serif;
 }
 
+a{
+    text-decoration: none;
+    color: #fff;
+}
+
 @font-face{
     font-family: 'upheavtt';
     src: url(../font/upheavtt.ttf);
@@ -21,7 +26,7 @@
     padding: 10px;
     display: flex;
     flex-direction: row;
-    justify-content: space-between  ;
+    justify-content: space-between;
     align-items: center;
 }
 
@@ -39,7 +44,9 @@
     width: 350px;
     display: flex;
     flex-direction: row;
+    justify-content: flex-end;
     color: #fff;
     gap: 30px;
     cursor: pointer ;
+    margin-right: 20px;
 }
