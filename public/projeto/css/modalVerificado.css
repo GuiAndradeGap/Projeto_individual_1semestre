@@ -8,7 +8,7 @@ dialog::backdrop{
     background-color: #00000083;
 }
 
-#modalLogin{
+#modalVerificado{
     width: 500px;
     height: 350px;
     background-color: #343D46;
@@ -17,7 +17,7 @@ dialog::backdrop{
     border-radius: 10px;
 }
 
-#modalLogin .container{
+#modalVerificado .container{
     width: 100%;
     height: 100%;
     display: flex;
@@ -26,14 +26,14 @@ dialog::backdrop{
     flex-direction: column;
 }
 
-#modalLogin p{
+#modalVerificado p{
     font-family: 'upheavtt';
     font-size: 32px;
     text-align: center;
     color: #fff;
 }
 
-#modalLogin img{
+#modalVerificado img{
     width: 80%;
     height: 65%;
 }

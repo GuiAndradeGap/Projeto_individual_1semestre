@@ -314,11 +314,12 @@
 .div_ranking .container{
     height: 94%;
     width: 100%;
-    background-color: #F5F5F5;
+    background-color: #171723;
     box-shadow: 2px 5px 5px rgba(0, 0, 0, 0.3);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    color: #fff;
     border-radius: 10px;
 }
 
@@ -336,7 +337,7 @@
     margin-top: 0.5%;
     margin-bottom: 0.5%;
     width: 100%;
-    background-color: #f3f3f3;
+    background-color: #1E1E2A;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -347,15 +348,13 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-left: 5px;
 }
 
 .posicao{
-    height: 20px;
-    width: 20px;    
+    height: 45px;
+    width: 45px;    
     color: #fff;
     display: flex;
     justify-content: center;
     align-items: center;
-    border-radius: 50%;
 }

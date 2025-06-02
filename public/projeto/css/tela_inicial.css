@@ -41,18 +41,38 @@ a{
 }
 
 .navbar {
-    width: 350px;
     display: flex;
     flex-direction: row;
     color: #fff;
     gap: 30px;
     cursor: pointer ;
     list-style: none;
+    margin-right: 10px;
 }
 
 .navbar a{
     color: #dcdcdc;
     text-decoration: none;
+}
+
+#campoUsuario{
+    display: none;
+}
+
+#campoUsuario #container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+
+#campoUsuario #container i{
+    font-size: 15px;
+    color: #dcdcdc;
+}
+
+#campoUsuario #container p{
+    margin: 0%;
 }
 
 .agora{
@@ -199,6 +219,10 @@ video{
 .card_euf1 h2{
     margin: 0;
     color: #fff;
+}
+
+#bold_text{
+    color: #B9A840;
 }
 
 .card_euf1 p{

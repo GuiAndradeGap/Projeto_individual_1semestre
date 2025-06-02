@@ -8,16 +8,16 @@ dialog::backdrop{
     background-color: #00000083;
 }
 
-#modalCadastro{
-    width: 500px;
+#modalErro{
+    width: 400px;
     height: 350px;
-    background-color: #343D46;
+    background-color: #ffffff;
     gap: 5%;
     border: none;
     border-radius: 10px;
 }
 
-#modalCadastro .container{
+#modalErro .container{
     width: 100%;
     height: 100%;
     display: flex;
@@ -26,14 +26,14 @@ dialog::backdrop{
     flex-direction: column;
 }
 
-#modalCadastro p{
+#modalErro p{
     font-family: 'upheavtt';
-    font-size: 32px;
+    font-size: 28px;
     text-align: center;
-    color: #fff;
+    color: #EB3100;
 }
 
-#modalCadastro img{
-    width: 80%;
+#modalErro img{
+    width: 65%;
     height: 65%;
 }

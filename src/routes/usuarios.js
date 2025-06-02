@@ -12,4 +12,8 @@ router.post("/autenticar", function (req, res) {
     usuarioController.autenticar(req, res);
 });
 
+router.put("/atualizarUsuario/:ID_USUARIO", function (req, res) {
+    usuarioController.atualizarUsuario(req, res);
+});
+
 module.exports = router;

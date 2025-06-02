@@ -72,7 +72,31 @@ function cadastrar(req, res) {
     }
 }
 
+function atualizarUsuario(req, res) {
+    var ID_USUARIO = req.body.ID_USUARIO;
+    var nome = req.body.nome;
+    var email = req.body.email;
+    var senha  = req.body.senha;
+    var senhaAtual  = req.body.senhaAtual
+
+    usuarioModel.atualizarUsuario(ID_USUARIO, nome, email, senha, senhaAtual)
+        .then(
+            function (resultado) {
+                res.json(resultado);
+            }
+        )
+        .catch(
+            function (erro) {
+                console.log(erro);
+                console.log("Houve um erro ao realizar o post: ", erro.sqlMessage);
+                res.status(500).json(erro.sqlMessage);
+            }
+        );
+
+}
+
 module.exports = {
     autenticar,
-    cadastrar
+    cadastrar,
+    atualizarUsuario
 }

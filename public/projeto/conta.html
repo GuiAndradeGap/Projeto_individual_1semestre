@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/conta.css">
+    <link rel="stylesheet" href="css/modalErro.css">
+    <link rel="stylesheet" href="css/modalVerificado.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <title>Conta</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="container_cadastro">
+            <div class="card_cadastro">
+                <div class="card_forms">
+                    <p class="title">Bem vindo!</p>
+                    <div class="campo">
+                        <input type="text" id="input_nome" placeholder="Nome">
+                        <div id="nome_erro"></div>
+                    </div>
+                    <div class="campo">
+                        <input type="text" id="input_email" placeholder="Email">
+                        <div id="email_erro"></div>
+                    </div>
+                    <div class="campo">
+                        <input type="text" id="input_senha_atual" placeholder="Senha atual">
+                        <div id="senha_atual_erro"></div>
+                    </div>
+                    <div class="campo">
+                        <input type="text" id="input_senha" placeholder="Senha">
+                        <div id="senha_erro"></div>
+                    </div>
+                    <div class="campo">
+                        <input type="text" id="input_conf_senha" placeholder="Confirme senha">
+                        <div id="senha_conf_erro"></div>
+                    </div>
+                    <div class="card_login_btn">
+                        <p>Tem certeza que quer <br> alterar? </p>
+                        <div class="button" onclick="alterar()">Alterar Informações <i
+                                class='bx bx-right-arrow-alt'></i></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="banner_cadastro">
+            <!-- Banner -->
+        </div>
+    </div>
+
+    <!-- Modal -->
+     <dialog id="modalVerificado">
+      <div class="container">
+        <p>Alteração realizado com sucesso!</p>
+        <img src="img/modal/cadastro2.gif">
+      </div>
+     </dialog>
+
+    <!-- Modal ERRO -->
+    <dialog id="modalErro">
+        <div class="container">
+            <p id="text_erro">Senha incorreta ou usuário não encontrado!</p>
+            <img src="img/modal/erro.gif">
+        </div>
+    </dialog>
+
+</body>
+
+</html>
+
+<script>
+    const modalVerificado = document.querySelector("#modalVerificado")
+    const modalErro = document.querySelector("#modalErro")
+    let ID_USUARIO = sessionStorage.getItem('ID_USUARIO')
+    let nomeUsuario = sessionStorage.getItem('NOME_USUARIO')
+    let emailUsuario = sessionStorage.getItem('EMAIL_USUARIO')
+
+    //Adicionando o title com o nome do usuário
+    let title = document.querySelector(".title")
+    title.innerHTML = `Bem vindo, ${nomeUsuario}!`
+
+    input_nome.value = nomeUsuario;
+    input_email.value = emailUsuario;
+
+    //Função de Cadastro
+    function alterar() {
+        var nomeVar = input_nome.value;
+        var emailVar = input_email.value;
+        var senhaAtualVar = input_senha_atual.value;
+        var senhaVar = input_senha.value;
+        var confirmacaoSenhaVar = input_conf_senha.value;
+        nome_erro.innerHTML = ``
+        email_erro.innerHTML = ``
+        senha_erro.innerHTML = ``
+        senha_conf_erro.innerHTML = ``
+
+        //Validações
+        if (nomeVar == "" || emailVar == "" || senhaVar == "" || confirmacaoSenhaVar == "") {
+            senha_conf_erro.innerHTML = `Campos vazios`
+            return false;
+        }
+        else if (!emailVar.includes('@') || !emailVar.includes('.com')) {
+            email_erro.innerHTML = `Falta @ ou .com`
+            return false;
+        }
+        else if (senhaVar.toLowerCase() == senhaVar || senhaVar.toUpperCase() == senhaVar) {
+            senha_erro.innerHTML = `A senha deve conter letra maiúscula e minúscula`
+            return false;
+        }
+        else if (!/[#@\$%&*()]/.test(senhaVar) || senhaVar.length < 8) {
+            senha_erro.innerHTML = `Não possui caracter especial ou não é maior que 8 caractéres`
+            return false;
+        }
+        else if (confirmacaoSenhaVar != senhaVar) {
+            senha_conf_erro.innerHTML = `Confirmação de senha diferente da senha`
+            return false;
+        }
+        else {
+            setInterval(5000);
+        }
+
+
+        fetch(`/usuarios/atualizarUsuario/${ID_USUARIO}`, {
+            method: "PUT",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                ID_USUARIO: ID_USUARIO,
+                nome: nomeVar,
+                email: emailVar,
+                senha: senhaVar,
+                senhaAtual: senhaAtualVar,
+            })
+        })
+            .then(resposta => resposta.json())
+            .then(dados => {
+                if (dados.affectedRows === 0) {
+                    modalErro.showModal()
+                    setTimeout(function () {
+                        modalErro.close()
+                    }, 3000); 
+                } else {
+                    modalVerificado.showModal()
+                    setTimeout(function () {
+                        window.location = 'index.html'
+                        modalVerificado.close()
+                    }, 3000); 
+                }
+            })
+            .catch(erro => {
+                console.error("#ERRO:", erro);
+                alert("Erro ao tentar atualizar os dados!");
+            });
+
+
+        return false;
+    }
+</script>

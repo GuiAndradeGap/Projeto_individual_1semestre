@@ -39,6 +39,16 @@
             <li>
               <a href="login.html">Login</a>
             </li>
+            <li>
+              <div id="campoUsuario">
+                <div id="container">
+                  <a href="conta.html">
+                    <p id="nomeUsuario">Usuário</p> 
+                  </a>
+                  <i class='bx bxs-edit-alt' ></i>
+                </div>
+              </div>
+            </li>
           </ul>
         </div>
         <!-- Título -->
@@ -62,15 +72,14 @@
       <div class="container">
         <div class="info_f1">
           <p class="title">Eu e a Fórmula 1</p>
-          <p class="text_f1">A Fórmula 1 é o pico do automobilismo, onde os melhores pilotos do mundo aceleram carros ultra rápidos em circuitos desafiadores espalhados pelo planeta.
-            É pura adrenalina: velocidade, ultrapassagens, estratégia e muita emoção a cada volta! Durante a temporada, os pilotos e suas equipes disputam ponto a ponto em busca do título de campeão mundial. Cada corrida, chamada de Grande Prêmio, é um verdadeiro espetáculo, onde cada segundo e cada decisão podem mudar tudo.</p>
-            <button>Saiba mais</button>
+          <p class="text_f1">Desde pequeno, a Fórmula 1 sempre esteve presente na minha vida por influência do meu pai e dos meus tios, grandes admiradores de Ayrton Senna. As histórias que eles contavam, cheias de emoção, 
+            despertaram em mim uma paixão profunda pelo esporte. Meu maior sonho era assistir a uma corrida em Interlagos, algo que parecia distante devido ao alto custo dos ingressos. Em 2018, esse sonho se tornou realidade quando fui premiado pela minha escola, em parceria com a Renault e a CET, com ingressos para o Grande Prêmio do Brasil, como reconhecimento pelo meu desempenho e dedicação nos estudos. Estar naquele autódromo, vendo de perto os carros e pilotos que sempre admirei, foi uma experiência inesquecível e um dos momentos mais marcantes da minha vida.</p>
         </div>
         <img src="img/GuilhermeF1.jpg" alt="">
         <div class="cards_euf1">
-          <div class="card_euf1"><h2>Onde Foi?</h2><p>A Fórmula 1 é o pico do automobilismo, onde os melhores pilotos do mundo aceleram carros</p></div>
-          <div class="card_euf1"><h2>Quando aconteceu?</h2><p>A Fórmula 1 é o pico do automobilismo, onde os melhores pilotos do mundo aceleram carros</p></div>
-          <div class="card_euf1"><h2>Quem Ganhou?</h2><p>A Fórmula 1 é o pico do automobilismo, onde os melhores pilotos do mundo aceleram carros</p></div>
+          <div class="card_euf1"><h2>Onde Foi?</h2><p>No <span id="bold_text">Autódromo de Interlagos</span>, em São Paulo, um dos circuitos mais tradicionais da Fórmula 1</p></div>
+          <div class="card_euf1"><h2>Quando aconteceu?</h2><p>No dia <span id="bold_text">11 de novembro de 2018</span>, em um domingo de muita emoção para os fãs do automobilismo</p></div>
+          <div class="card_euf1"><h2>Quem Ganhou?</h2><p><span id="bold_text">Lewis Hamilton</span>, da Mercedes, venceu a corrida após um erro de Max Verstappen com um retardatário</p></div>
         </div>
       </div>
     </div>
@@ -85,7 +94,8 @@
 </html>
 
 <script>
-   const carrossel = document.getElementById('carrossel');
+  const carrossel = document.getElementById('carrossel');
+  const campoUsuario = document.getElementById('campoUsuario');
    
   fetch('pilotos.json')
   .then(response => response.json())
@@ -106,13 +116,25 @@
   });
 
 let ID_USUARIO = sessionStorage.getItem('ID_USUARIO');
+let NOME_USUARIO = sessionStorage.getItem('NOME_USUARIO');
 
 function redirecionarJogo(){
   if(ID_USUARIO != undefined){
     window.location = 'selecao_personagem.html'
+    nomeUsuario.innerHTML = NOME_USUARIO
+    nomeUsuario.style.display = 'block'
   }
   else{
     alert('Você precisa se logar para jogar')
   }
 }
+
+function verificarLogin(){
+  if(ID_USUARIO != undefined){
+    nomeUsuario.innerHTML = NOME_USUARIO
+    campoUsuario .style.display = 'block'
+  }
+}
+
+verificarLogin()
 </script>

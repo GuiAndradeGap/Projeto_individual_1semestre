@@ -15,7 +15,7 @@
     "id": 1
   },
   {
-    "video": "video/max.mp4",
+    "video": "video/lewis.mp4",
     "nome": "Lewis Hamilton",
     "imagem": "img/Pilotos/hamilton.png",
     "descricao": "Lewis Hamilton é sete vezes campeão mundial, competindo pela equipe Ferrari.",
@@ -45,7 +45,7 @@
     "id": 3
   },
   {
-    "video": "video/bortolleto.mp4",
+    "video": "video/lando.mp4",
     "nome": "Lando Norris",
     "imagem": "img/Pilotos/norris.png",
     "descricao": "Lando Norris é um piloto britânico, competindo pela equipe McLaren desde sua estreia na F1.",
@@ -60,7 +60,7 @@
     "id": 4
   },
   {
-    "video": "video/bortolleto.mp4",
+    "video": "video/piastri.mp4",
     "nome": "Oscar Piastri",
     "imagem": "img/Pilotos/piastri.png",
     "descricao": "Oscar Piastri é um piloto australiano, competindo pela equipe McLaren desde 2023.",
@@ -75,7 +75,7 @@
     "id": 5
   },
   {
-    "video": "video/bortolleto.mp4",
+    "video": "video/russel.mp4",
     "nome": "George Russell",
     "imagem": "img/Pilotos/russel.png",
     "descricao": "George Russell é um piloto britânico, competindo pela equipe Mercedes desde 2022.",
@@ -105,7 +105,7 @@
     "id": 7
   },
   {
-    "video": "video/bortolleto.mp4",
+    "video": "video/alonso.mp4",
     "nome": "Fernando Alonso",
     "imagem": "img/Pilotos/alonso.png",
     "descricao": "Fernando Alonso é um piloto espanhol, bicampeão mundial, da equipe Aston Martin.",
@@ -211,66 +211,6 @@
   },
   {
     "video": "video/bortolleto.mp4",
-    "nome": "Logan Sargeant",
-    "imagem": "https://www.formula1.com/content/dam/fom-website/drivers/2025Drivers/sargeant.jpg",
-    "descricao": "Logan Sargeant é um piloto norte-americano que compete pela equipe Williams desde 2023.",
-    "numero": 2,
-    "equipe": "Williams",
-    "campeonatos": 0,
-    "grandes_premios": 40,
-    "data_nascimento": "2000-12-31",
-    "local_nascimento": "Fort Lauderdale, EUA",
-    "pais": "Estados Unidos",
-    "bandeira_pais": "https://flagcdn.com/us.svg",
-    "id": 15
-  },
-  {
-    "video": "video/bortolleto.mp4",
-    "nome": "Valtteri Bottas",
-    "imagem": "https://www.formula1.com/content/dam/fom-website/drivers/2025Drivers/bottas.jpg",
-    "descricao": "Valtteri Bottas é um piloto finlandês veterano, agora competindo pela equipe Sauber.",
-    "numero": 77,
-    "equipe": "Sauber",
-    "campeonatos": 0,
-    "grandes_premios": 200,
-    "data_nascimento": "1989-08-28",
-    "local_nascimento": "Nastola, Finlândia",
-    "pais": "Finlândia",
-    "bandeira_pais": "https://flagcdn.com/fi.svg",
-    "id": 16
-  },
-  {
-    "video": "video/bortolleto.mp4",
-    "nome": "Zhou Guanyu",
-    "imagem": "https://www.formula1.com/content/dam/fom-website/drivers/2025Drivers/zhou.jpg",
-    "descricao": "Zhou Guanyu é o primeiro piloto chinês na Fórmula 1, correndo pela equipe Sauber.",
-    "numero": 24,
-    "equipe": "Sauber",
-    "campeonatos": 0,
-    "grandes_premios": 60,
-    "data_nascimento": "1999-05-30",
-    "local_nascimento": "Xangai, China",
-    "pais": "China",
-    "bandeira_pais": "https://flagcdn.com/cn.svg",
-    "id": 17
-  },
-  {
-    "video": "video/bortolleto.mp4",
-    "nome": "Pierre Gasly",
-    "imagem": "https://www.formula1.com/content/dam/fom-website/drivers/2025Drivers/gasly.jpg",
-    "descricao": "Pierre Gasly é um piloto francês, competindo pela equipe Alpine desde 2023.",
-    "numero": 10,
-    "equipe": "Alpine",
-    "campeonatos": 0,
-    "grandes_premios": 130,
-    "data_nascimento": "1996-02-07",
-    "local_nascimento": "Rouen, França",
-    "pais": "França",
-    "bandeira_pais": "https://flagcdn.com/fr.svg",
-    "id": 18
-  },
-  {
-    "video": "video/bortolleto.mp4",
     "nome": "Gabriel Bortoleto",
     "imagem": "img/Pilotos/bortoleto.png",
     "descricao": "Gabriel Bortoleto é um piloto brasileiro que estreou na Fórmula 1 em 2025.",
@@ -282,6 +222,6 @@
     "local_nascimento": "São Paulo, Brasil",
     "pais": "Brasil",
     "bandeira_pais": "https://flagcdn.com/br.svg",
-    "id": 19
+    "id": 15
   }
 ]

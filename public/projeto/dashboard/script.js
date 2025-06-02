@@ -55,16 +55,31 @@ function buscarPersonagem(ID_USUARIO) {
 // Gráfico
 function plotarGrafico01(resposta){
 const grafico1 = document.getElementById('myChart01');
+
+//Declarando as variáveis de labels e data
+labelsLista = []
+dataLista = []
+for(i = 0; i < 5; i++){
+    if(resposta[i] != null){
+        labelsLista.push(resposta[i].nomePersonagem) 
+        dataLista.push(resposta[i].qtdPersonagem)
+    }
+    else{
+        labelsLista.push('Não escolhido') 
+        dataLista.push(0)
+    }
+}
+
 new Chart(grafico1, {
     type: 'bar',
     data: {
-        labels: [resposta[0].nomePersonagem, resposta[1].nomePersonagem, resposta[2].nomePersonagem, resposta[3].nomePersonagem, resposta[4].nomePersonagem],
+        labels: labelsLista,
         datasets: [{
             label: 'Quantidade de Escolhas',
             backgroundColor: '#FFCE1E',
             borderColor: '#FFCE1E',
             borderRadius: 3,
-            data: [resposta[0].qtdPersonagem, resposta[1].qtdPersonagem, resposta[2].qtdPersonagem, resposta[3].qtdPersonagem, resposta[4].qtdPersonagem],
+            data: dataLista,
             borderWidth: 1,
             pointStyle: false
         }]
@@ -166,18 +181,7 @@ function criarCampoRanking(resposta03){
     var medalhaNome = ``
     
     for(i = 0; i < resposta03.length; i++){
-        if(i == 0){
-            medalhaNome = `<div class="nome_posicao"><div class="posicao" style="background-color: #FFCE1E">${i + 1}</div><p>${resposta03[i].nomeUsuario}</p></div>`
-        }
-        else if(i == 1){
-            medalhaNome = `<div class="nome_posicao"><div class="posicao" style="background-color: #939393">${i + 1}</div><p>${resposta03[i].nomeUsuario}</p></div>`
-        }
-        else if(i == 2){
-            medalhaNome = `<div class="nome_posicao"><div class="posicao" style="background-color: #B06B42">${i + 1}</div><p>${resposta03[i].nomeUsuario}</p></div>`
-        }
-        else{
-            medalhaNome = `<div class="nome_posicao"><div class="posicao" style="background-color: #155FDE">${i + 1}</div><p>${resposta03[i].nomeUsuario}</p></div>`
-        }
+        medalhaNome = `<div class="nome_posicao"><div class="posicao" style="background-color: #FF0000">${i + 1}</div><p>${resposta03[i].nomeUsuario}</p></div>`
 
         tabela_ranking.innerHTML += `
         <div class="campo_ranking">
@@ -210,17 +214,29 @@ BuscarTempoUsuario(ID_USUARIO)
 function plotarGrafico03(resposta05) {
 const grafico3 = document.getElementById('myChart03');
 
+//Declarando as variáveis de labels e data
+labelsLista = []
+dataLista = []
+for(i = 0; i < 10; i++){
+    if(resposta05[i] != null){
+        labelsLista.push(resposta05[i].data) 
+        dataLista.push(resposta05[i].tempo)
+    }
+    else{
+        labelsLista.push('Não realizada') 
+        dataLista.push(0)
+    }
+}
+
 new Chart(grafico3, {
     type: 'line',
     data: {
-        labels: [`${resposta05[0].data}`, `${resposta05[1].data}`, `${resposta05[2].data}`, resposta05[3].data, 
-        resposta05[4].data, resposta05[5].data,resposta05[6].data,resposta05[7].data, resposta05[8].data,resposta05[9].data],
+        labels: labelsLista,
         datasets: [
         {
             label: 'Tempo em segundos',
             backgroundColor: 'rgb(255, 115, 0)',
-            data: [resposta05[0].tempo, resposta05[1].tempo, resposta05[2].tempo, resposta05[3].tempo, 
-            resposta05[4].tempo, resposta05[5].tempo,resposta05[6].tempo,resposta05[7].tempo, resposta05[8].tempo,resposta05[9].tempo],
+            data: dataLista,
             pointStyle: true
         }
         ]
