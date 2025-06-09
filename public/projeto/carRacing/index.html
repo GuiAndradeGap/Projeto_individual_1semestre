@@ -50,7 +50,7 @@
   .then(response => response.json())
   .then(personagem => {
      const id_personagem = personagem.find(p => p.id === id_perso);
-
+    
      if(id_personagem){
         info_personagem.innerHTML =  `
             <img src="../${id_personagem.imagemEscolhido}" alt="">

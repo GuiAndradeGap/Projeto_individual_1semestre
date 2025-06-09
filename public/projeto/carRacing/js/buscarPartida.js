@@ -32,7 +32,7 @@ function atualizarPartida(idPartida, totalColisao, tempo, resultadoPartida) {
         }).then(function (resposta) {
 
             if (resposta.ok) {
-                window.alert("Partida atualizada com sucesso: " + idPartida + "!");
+                window.location = '../../projeto/dashboard/index.html'
             } else if (resposta.status == 404) {
                 window.alert("Deu 404!");
             } else {

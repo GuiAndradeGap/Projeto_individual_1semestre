@@ -20,6 +20,7 @@ for(i = 1;i <= 1000;i++){
     })
 }
 
+////Desenhando o obstáculo
 for (i = 0; i < 150; i++) {
   let o = Math.random()
   let z = Math.random() * (100000) + 5000
@@ -95,7 +96,7 @@ for (let i = 0; i < obstaculos.length; i++) {
   ctx.drawImage(obstaculoImg, screenX, ob.telaY, ob.width / 6, ob.width / 6)
 
   //Desacelerar caso o carro bata no obstáculo
-  if((((xCarro+ wCarro/2) >= screenX && xCarro <= screenX + 3) || ((xCarro+ wCarro/2) <= screenX && xCarro >= screenX - 3))  && ((yCarro+hCarro/2) >= ob.telaY && yCarro <= ob.telaY-35)){
+  if((((xCarro+ wCarro/2) >= screenX && xCarro <= screenX ) || ((xCarro+ wCarro/2) <= screenX && (xCarro+ wCarro/1.5) >= screenX))  && ((yCarro+hCarro/2) >= ob.telaY && yCarro <= ob.telaY-35)){
      jogadorZ -= 23
      colisao[i] = 1
   }

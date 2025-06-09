@@ -6,29 +6,29 @@ body {
     background-color: #0C1314;
 }
 
-:root{
+:root {
     --azul: #32b9cd;
     --laranja: #FF8E2C;
 }
 
-@font-face{
+@font-face {
     font-family: 'upheavtt';
     src: url(../font/upheavtt.ttf);
 }
 
-a{
+a {
     text-decoration: none;
 }
 
 /*HEADER*/
 
-.container_header{
+.container_header {
     display: flex;
     justify-content: space-between;
     padding: 10px;
 }
 
-.logo{
+.logo {
     height: 75px;
     width: 125px;
     background-image: url("../img/logo_f1.png");
@@ -36,7 +36,7 @@ a{
     margin-left: 10px;
 }
 
-.titulo{
+.titulo {
     color: var(--azul);
 }
 
@@ -45,63 +45,76 @@ a{
     flex-direction: row;
     color: #fff;
     gap: 30px;
-    cursor: pointer ;
+    cursor: pointer;
     list-style: none;
     margin-right: 10px;
 }
 
-.navbar a{
+.navbar a {
     color: #dcdcdc;
     text-decoration: none;
 }
 
-#campoUsuario{
+#campoUsuario {
     display: none;
 }
 
-#campoUsuario #container{
+#campoUsuario #container {
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 5px;
 }
 
-#campoUsuario #container i{
+#campoUsuario #container i {
     font-size: 15px;
     color: #dcdcdc;
 }
 
-#campoUsuario #container p{
+#campoUsuario #container p {
     margin: 0%;
 }
 
-.agora{
+.agora {
     font-weight: bolder;
 }
 
-.banner{
+.banner {
+    position: relative;
     height: 740px;
     width: 100%;
-    background-image: url("../img/banner.jpg") ;
-    background-size: cover;
-    background-position: 0px -25vh;
+    overflow: hidden;
 }
 
-.banner .container{
+.banner video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    transform: translate(-50%, -50%);
+    object-fit: cover;
+    z-index: 0;
+}
+
+.banner .container {
     width: 100%;
     height: 100%;
     display: flex;
     flex-direction: column;
+    position: relative;
+    z-index: 1;
 }
 
-.banner_title{
+
+.banner_title {
     width: 100%;
     height: 100%;
     display: flex;
     align-items: flex-end;
 }
 
-.banner_title p{
+.banner_title p {
     color: #dcdcdc;
     font-size: 32px;
     margin: 2%;
@@ -110,7 +123,7 @@ a{
 
 /* O que é a Formula 1 */
 
-.formula1{
+.formula1 {
     width: 100%;
     height: 600px;
     display: flex;
@@ -118,14 +131,14 @@ a{
     justify-content: center;
 }
 
-.formula1 .container{
+.formula1 .container {
     width: 85%;
     height: 500px;
     display: flex;
     justify-content: space-between;
 }
 
-.info_f1{
+.info_f1 {
     width: 500px;
     height: 445px;
     display: flex;
@@ -133,18 +146,18 @@ a{
     justify-content: space-between;
 }
 
-.info_f1 .title{
+.info_f1 .title {
     font-family: 'upheavtt';
     font-size: 40px;
     color: #fff;
     margin-bottom: 0;
 }
 
-.info_f1 .text_f1{
+.info_f1 .text_f1 {
     color: #c6c6c6;
 }
 
-.info_f1 button{
+.info_f1 button {
     width: 150px;
     height: 40px;
     border: none;
@@ -153,14 +166,116 @@ a{
     background-color: #FF0000;
 }
 
-video{
+video {
     width: 700px;
     height: 500px;
 }
 
+/* Times*/
+
+.times {
+    width: 100%;
+    height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.times .container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+.time_carro {
+    width: 100%;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.time {
+    width: 65%;
+    height: 100px;
+    background-color: #FF0000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 62px;
+    color: #FFFFFF;
+    font-family: "upheavtt";
+}
+
+.time_carro img {
+    width: 530px;
+    height: 160px;
+    position: relative;
+    left: -80px;
+}
+
+.container_times {
+    width: 100%;
+    height: 70%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.container_1{
+    width: 100%;
+    height: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+
+.container_2{
+    width: 100%;
+    height: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+
+.card_time {
+    height: 150px;
+    width: 250px;
+    background-color: #FFFFFF;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+}
+
+.card_time .coluna_cor {
+    width: 10%;
+    height: 100%;
+}
+
+.card_time .imagem_time{
+    width: 90%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card_time .imagem_time img{
+    width: 80%;
+    height: 65%;
+}
+
+
 /*Eu e a Fórmula 1*/
 
-.EuFormula1 .container{
+.EuFormula1 .container {
     width: 85%;
     height: 500px;
     display: flex;
@@ -168,7 +283,7 @@ video{
     gap: 9%;
 }
 
-.EuFormula1{
+.EuFormula1 {
     width: 100%;
     height: 600px;
     display: flex;
@@ -176,7 +291,7 @@ video{
     justify-content: center;
 }
 
-.EuFormula1 .info_f1{
+.EuFormula1 .info_f1 {
     width: 500px;
     height: 100%;
     display: flex;
@@ -184,7 +299,7 @@ video{
     justify-content: space-between;
 }
 
-.EuFormula1 .info_f1 .title{
+.EuFormula1 .info_f1 .title {
     margin: 0;
     font-family: 'upheavtt';
     font-size: 40px;
@@ -192,21 +307,21 @@ video{
     margin-bottom: 0;
 }
 
-.EuFormula1 .info_f1 .text_f1{
+.EuFormula1 .info_f1 .text_f1 {
     color: #c6c6c6;
 }
 
-.EuFormula1 .container img{
+.EuFormula1 .container img {
     width: 259;
     height: 500px;
 }
 
-.cards_euf1{
+.cards_euf1 {
     height: 100%;
     width: 35%;
-   }
+}
 
-.card_euf1{
+.card_euf1 {
     height: 33.33%;
     width: 100%;
     border-bottom: solid 2px #fff;
@@ -216,16 +331,16 @@ video{
     gap: 10px;
 }
 
-.card_euf1 h2{
+.card_euf1 h2 {
     margin: 0;
     color: #fff;
 }
 
-#bold_text{
+#bold_text {
     color: #B9A840;
 }
 
-.card_euf1 p{
+.card_euf1 p {
     margin: 0;
     color: #c6c6c6;
     font-size: 12px;
@@ -241,14 +356,14 @@ video{
     flex-direction: column;
 }
 
-.whapper .title_pilotos{
+.whapper .title_pilotos {
     font-family: 'upheavtt';
     font-size: 40px;
     color: #fff;
     margin-bottom: 0;
 }
 
-.whapper .carrossel{
+.whapper .carrossel {
     width: 85%;
     /* cards na horizontal */
     display: grid;
@@ -257,28 +372,28 @@ video{
     grid-auto-columns: calc((100%/3) - 12px);
     gap: 16px;
     /* esconder qualquer conteúdo que ultrapasse os limites do container. */
-     place-items: center;
+    place-items: center;
     overflow: hidden;
 }
 
-.title_pilotos{
+.title_pilotos {
     width: 85%;
     display: flex;
 
 }
 
-.card{
+.card {
     height: 420px;
     width: 350px;
     list-style: none;
 }
 
-.card video{
+.card video {
     width: 100%;
     height: 250px;
 }
 
-.card .title{
+.card .title {
     width: 100%;
     height: 30px;
     font-size: 20px;
@@ -286,22 +401,22 @@ video{
     margin: 0;
 }
 
-.card .descricao{
+.card .descricao {
     font-size: 14px;
     color: #c6c6c6;
 }
 
-.card button{
+.card button {
     height: 35px;
     width: 100px;
     border: none;
     border-radius: 2px;
     background-color: #FF0000;
-    color:#fff
+    color: #fff
 }
 
 
-.carrossel.dragging .card{
+.carrossel.dragging .card {
     cursor: grab;
     user-select: none;
 }

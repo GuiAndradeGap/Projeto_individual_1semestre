@@ -2,108 +2,156 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>F1</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./css/tela_inicial.css">
-    <link rel="icon" href="assets/icon/favicon2.ico">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <!-- icons -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
-    <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
-    <script src="./js/carrosel.js" defer></script>
-    <script src="./js/cardPiloto.js" defer></script>
+  <title>F1</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="./css/tela_inicial.css">
+  <link rel="icon" href="assets/icon/favicon2.ico">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <!-- icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+  <script src="./js/carrosel.js" defer></script>
+  <script src="./js/cardPiloto.js" defer></script>
 </head>
 
 <body>
-  
+
   <!-- Parte - Banner -->
-    <div class="banner">
-      <div class="container">
-        <!-- Parte - Header -->
-        <div class="container_header">
-            <div class="logo"></div>
-          <ul class="navbar">
-            <li class="agora">
-              <a href="#">Home</a>
-            </li>
-            <li>
-              <a onclick="redirecionarJogo()">CarRacing</a>
-            </li>
-            <li>
-              <a href="cadastro.html">Entrar</a>
-            </li>
-            <li>
-              <a href="login.html">Login</a>
-            </li>
-            <li>
-              <div id="campoUsuario">
-                <div id="container">
-                  <a href="conta.html">
-                    <p id="nomeUsuario">Usuário</p> 
-                  </a>
-                  <i class='bx bxs-edit-alt' ></i>
-                </div>
+  <div class="banner">
+    <video autoplay muted loop playsinline>
+      <source src="video/banner.mp4" type="video/mp4">
+      Seu navegador não suporta vídeo em HTML5.
+    </video>
+
+    <div class="container">
+      <!-- Parte - Header -->
+      <div class="container_header">
+        <div class="logo"></div>
+        <ul class="navbar">
+          <li class="agora"><a href="#">Home</a></li>
+          <li><a onclick="redirecionarJogo()">CarRacing</a></li>
+          <li><a href="cadastro.html">Cadastrar-se</a></li>
+          <li><a href="login.html">Login</a></li>
+          <li>
+            <div id="campoUsuario">
+              <div id="container">
+                <a href="conta.html">
+                  <p id="nomeUsuario">Usuário</p>
+                </a>
+                <i class='bx bxs-edit-alt'></i>
               </div>
-            </li>
-          </ul>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Título -->
+      <div class="banner_title">
+        <p>Experimente<br> mais da f1</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- O que é a F1 -->
+  <div class="formula1">
+    <div class="container">
+      <div class="info_f1">
+        <p class="title">O que é a Fórmula 1</p>
+        <p class="text_f1">A Fórmula 1 é o pico do automobilismo, onde os melhores pilotos do mundo aceleram carros
+          ultra rápidos em circuitos desafiadores espalhados pelo planeta.
+          É pura adrenalina: velocidade, ultrapassagens, estratégia e muita emoção a cada volta! Durante a temporada, os
+          pilotos e suas equipes disputam ponto a ponto em busca do título de campeão mundial. Cada corrida, chamada de
+          Grande Prêmio, é um verdadeiro espetáculo, onde cada segundo e cada decisão podem mudar tudo.</p>
+        <button id="button_time">Ver equipes</button>
+      </div>
+      <video src="./video/This Is Formula 1.mp4" autoplay loop muted></video>
+    </div>
+  </div>
+
+  <!-- Times -->
+  <div class="times">
+    <div class="container">
+      <!-- Time Carro -->
+      <div class="time_carro">
+
+      </div>
+      <!-- Container cards Times -->
+      <div class="container_times">
+        <div class="container_1">
+          <!-- card -->
         </div>
-        <!-- Título -->
-         <div class="banner_title">
-            <p>Experimente<br> mais da f1</p>
+        <div class="container_2">
+          <!-- card -->
         </div>
       </div>
     </div>
-    <div class="formula1">
-      <div class="container">
-        <div class="info_f1">
-          <p class="title">O que é a Fórmula 1</p>
-          <p class="text_f1">A Fórmula 1 é o pico do automobilismo, onde os melhores pilotos do mundo aceleram carros ultra rápidos em circuitos desafiadores espalhados pelo planeta.
-            É pura adrenalina: velocidade, ultrapassagens, estratégia e muita emoção a cada volta! Durante a temporada, os pilotos e suas equipes disputam ponto a ponto em busca do título de campeão mundial. Cada corrida, chamada de Grande Prêmio, é um verdadeiro espetáculo, onde cada segundo e cada decisão podem mudar tudo.</p>
-          <button>Saiba mais</button>
+  </div>
+
+  <!-- Eu e a F1 -->
+  <div class="EuFormula1">
+    <div class="container">
+      <div class="info_f1">
+        <p class="title">Eu e a Fórmula 1</p>
+        <p class="text_f1">Desde pequeno, a Fórmula 1 sempre esteve presente na minha vida por influência do meu pai e
+          dos meus tios, grandes admiradores de Ayrton Senna. As histórias que eles contavam, cheias de emoção,
+          despertaram em mim uma paixão profunda pelo esporte. Meu maior sonho era assistir a uma corrida em Interlagos,
+          algo que parecia distante devido ao alto custo dos ingressos. Em 2018, esse sonho se tornou realidade quando
+          fui premiado pela minha escola, em parceria com a Renault e a CET, com ingressos para o Grande Prêmio do
+          Brasil, como reconhecimento pelo meu desempenho e dedicação nos estudos. Estar naquele autódromo, vendo de
+          perto os carros e pilotos que sempre admirei, foi uma experiência inesquecível e um dos momentos mais
+          marcantes da minha vida.</p>
+      </div>
+      <img src="img/GuilhermeF1.jpg" alt="">
+      <div class="cards_euf1">
+        <div class="card_euf1">
+          <h2>Onde Foi?</h2>
+          <p>No <span id="bold_text">Autódromo de Interlagos</span>, em São Paulo, um dos circuitos mais tradicionais da
+            Fórmula 1</p>
         </div>
-        <video src="./video/This Is Formula 1.mp4" autoplay loop muted></video>
+        <div class="card_euf1">
+          <h2>Quando aconteceu?</h2>
+          <p>No dia <span id="bold_text">11 de novembro de 2018</span>, em um domingo de muita emoção para os fãs do
+            automobilismo</p>
+        </div>
+        <div class="card_euf1">
+          <h2>Quem Ganhou?</h2>
+          <p><span id="bold_text">Lewis Hamilton</span>, da Mercedes, venceu a corrida após um erro de Max Verstappen
+            com um retardatário</p>
+        </div>
       </div>
     </div>
-    <div class="EuFormula1">
-      <div class="container">
-        <div class="info_f1">
-          <p class="title">Eu e a Fórmula 1</p>
-          <p class="text_f1">Desde pequeno, a Fórmula 1 sempre esteve presente na minha vida por influência do meu pai e dos meus tios, grandes admiradores de Ayrton Senna. As histórias que eles contavam, cheias de emoção, 
-            despertaram em mim uma paixão profunda pelo esporte. Meu maior sonho era assistir a uma corrida em Interlagos, algo que parecia distante devido ao alto custo dos ingressos. Em 2018, esse sonho se tornou realidade quando fui premiado pela minha escola, em parceria com a Renault e a CET, com ingressos para o Grande Prêmio do Brasil, como reconhecimento pelo meu desempenho e dedicação nos estudos. Estar naquele autódromo, vendo de perto os carros e pilotos que sempre admirei, foi uma experiência inesquecível e um dos momentos mais marcantes da minha vida.</p>
-        </div>
-        <img src="img/GuilhermeF1.jpg" alt="">
-        <div class="cards_euf1">
-          <div class="card_euf1"><h2>Onde Foi?</h2><p>No <span id="bold_text">Autódromo de Interlagos</span>, em São Paulo, um dos circuitos mais tradicionais da Fórmula 1</p></div>
-          <div class="card_euf1"><h2>Quando aconteceu?</h2><p>No dia <span id="bold_text">11 de novembro de 2018</span>, em um domingo de muita emoção para os fãs do automobilismo</p></div>
-          <div class="card_euf1"><h2>Quem Ganhou?</h2><p><span id="bold_text">Lewis Hamilton</span>, da Mercedes, venceu a corrida após um erro de Max Verstappen com um retardatário</p></div>
-        </div>
-      </div>
+  </div>
+  <!-- Carrossel -->
+  <div class="whapper">
+    <div class="title_pilotos">
+      <p>Pilotos de 2025</p>
     </div>
-    <!-- Carrossel -->
-    <div class="whapper">
-      <div class="title_pilotos"><p>Pilotos de 2025</p></div>
-      <ul class="carrossel" id="carrossel">
-        <!-- Cards -->
-      </ul>
-    </div>
+    <ul class="carrossel" id="carrossel">
+      <!-- Cards -->
+    </ul>
+  </div>
 </body>
+
 </html>
 
 <script>
+  //Pilotos
   const carrossel = document.getElementById('carrossel');
   const campoUsuario = document.getElementById('campoUsuario');
-   
+  
   fetch('pilotos.json')
-  .then(response => response.json())
-  .then(pilotos => {
-    pilotos.forEach(piloto => {
-      const li = document.createElement('li');
-      li.className = 'card';
-      li.innerHTML = `
+    .then(response => response.json())
+    .then(pilotos => {
+      pilotos.forEach(piloto => {
+        const li = document.createElement('li');
+        li.className = 'card';
+        li.innerHTML = `
         <video src="${piloto.video}" autoplay loop muted></video>
         <p class="title">${piloto.nome}</p>
         <div class="sobre">
@@ -111,30 +159,106 @@
         </div>
         <a href="piloto.html?id=${piloto.id}"><button>Saiba mais</button></a>
       `;
-      carrossel.appendChild(li);
+        carrossel.appendChild(li);
+      });
     });
-  });
 
-let ID_USUARIO = sessionStorage.getItem('ID_USUARIO');
-let NOME_USUARIO = sessionStorage.getItem('NOME_USUARIO');
+  //Equipes
+  const container_1 = document.querySelector('.container_1');
+  const container_2 = document.querySelector('.container_2');
+  const timeCarro = document.querySelector('.time_carro');
 
-function redirecionarJogo(){
-  if(ID_USUARIO != undefined){
-    window.location = 'selecao_personagem.html'
-    nomeUsuario.innerHTML = NOME_USUARIO
-    nomeUsuario.style.display = 'block'
+  fetch('equipes.json')
+    .then(response => response.json())
+    .then(equipes => {
+      var idTime = 1
+
+      equipes.forEach(equipe => {
+        //Mudando o Nome da equipe e o carro
+        if(equipe.id == idTime){
+            timeCarro.innerHTML = `
+            <div class="time">
+              <p>${equipe.teamName}</p>
+            </div>
+            <img src="${equipe.carImage}" alt="">`
+          }
+
+        if(equipe.id <= 5){    
+          //card
+          const div = document.createElement('div');
+          div.className = 'card_time';
+          div.innerHTML = `
+          <div class="coluna_cor" style="background-color: ${equipe.brandColor}"></div>
+          <div class="imagem_time"><img src="${equipe.brandLogo}"></div>
+          `;
+          container_1.appendChild(div);
+
+          //Mudando nome e carro
+          div.addEventListener("click", function(){
+             timeCarro.innerHTML = `
+            <div class="time">
+              <p>${equipe.teamName}</p>
+            </div>
+            <img src="${equipe.carImage}" alt="">`
+
+            const time = document.querySelector('.time')
+            time.style.backgroundColor = equipe.brandColor
+          })
+        }
+        else{
+          const div = document.createElement('div');
+          div.className = 'card_time';
+          div.innerHTML = `
+          <div class="coluna_cor" style="background-color: ${equipe.brandColor}"></div>
+          <div class="imagem_time"><img src="${equipe.brandLogo}"></div>
+          `;
+          container_2.appendChild(div);
+
+          //Mudando nome e carro
+          div.addEventListener("click", function(){
+             timeCarro.innerHTML = `
+            <div class="time">
+              <p>${equipe.teamName}</p>
+            </div>
+            <img src="${equipe.carImage}" alt="">`
+
+            const time = document.querySelector('.time')
+            time.style.backgroundColor = equipe.brandColor
+          })
+        }
+
+
+        
+      });
+    });
+
+  let ID_USUARIO = sessionStorage.getItem('ID_USUARIO');
+  let NOME_USUARIO = sessionStorage.getItem('NOME_USUARIO');
+
+  function redirecionarJogo() {
+    if (ID_USUARIO != undefined) {
+      window.location = 'selecao_personagem.html'
+      nomeUsuario.innerHTML = NOME_USUARIO
+      nomeUsuario.style.display = 'block'
+    }
+    else {
+      alert('Você precisa se logar para jogar')
+    }
   }
-  else{
-    alert('Você precisa se logar para jogar')
-  }
-}
 
-function verificarLogin(){
-  if(ID_USUARIO != undefined){
-    nomeUsuario.innerHTML = NOME_USUARIO
-    campoUsuario .style.display = 'block'
+  function verificarLogin() {
+    if (ID_USUARIO != undefined) {
+      nomeUsuario.innerHTML = NOME_USUARIO
+      campoUsuario.style.display = 'block'
+    }
   }
-}
 
-verificarLogin()
+  //Adicionar evento de click para a tela de times
+  const buttonTime = document.getElementById('button_time')
+
+  buttonTime.addEventListener('click', () => {
+    window.location = 'equipes.html'
+  })
+
+  verificarLogin()
 </script>

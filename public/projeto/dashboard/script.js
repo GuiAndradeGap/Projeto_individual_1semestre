@@ -2,6 +2,17 @@ let nome = sessionStorage.getItem('NOME_USUARIO');
 let ID_USUARIO = sessionStorage.getItem('ID_USUARIO');
 var h1 = document.getElementById('nome_usuario')
 h1.innerHTML = nome
+campoHome = document.getElementById('campo_home')
+campoJogo = document.getElementById('campo_jogo')
+
+//Direcionar usuário para outraas partes do site
+campoHome.addEventListener('click', () =>{
+    window.location = '../index.html'
+})
+
+campoJogo.addEventListener('click', () =>{
+    window.location = '../selecao_personagem.html'
+})
 
 //KPIs
 function buscarKPI(ID_USUARIO) {
@@ -11,7 +22,7 @@ function buscarKPI(ID_USUARIO) {
                     console.log(`Dados recebidos: ${JSON.stringify(resposta04)}`);
                     //Plotando os dados
                     if(resposta04[0].tempo != null){
-                        tempoPartida.innerHTML = resposta04[0].tempo
+                        tempoPartida.innerHTML = `${resposta04[0].tempo}s`
                     }
                     if(resposta04[0].colisoes != null){
                         colisoesPartida.innerHTML = resposta04[0].colisoes

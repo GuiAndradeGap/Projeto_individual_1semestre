@@ -4,48 +4,55 @@
     "nome": "Rubens",
     "sobrenome": "Barrichello",
     "imagem": "img/pilotos2d/Rubens.jpg",
-    "imagemEscolhido": "img/pilotos2d/Rubens-escolhido.png"
+    "imagemEscolhido": "img/pilotos2d/Rubens-escolhido.png",
+    "carro": "img/carro_f1/"
   },
   {
     "id": 2,
     "nome": "Alan",
     "sobrenome": "Prost",
     "imagem": "img/pilotos2d/Prost.png",
-    "imagemEscolhido": "img/pilotos2d/Prost-escolhido.png"
+    "imagemEscolhido": "img/pilotos2d/Prost-escolhido.png",
+    "carro": "img/carro_f1/"
   },
   {
     "id": 3,
     "nome": "Nelson",
     "sobrenome": "Piquet",
     "imagem": "img/pilotos2d/Nelson Piquet.jpg",
-    "imagemEscolhido": "img/pilotos2d/Nelson-escolhido.png"
+    "imagemEscolhido": "img/pilotos2d/Nelson-escolhido.png",
+    "carro": "img/carro_f1/"
   },
   {
     "id": 4,
     "nome": "Max",
     "sobrenome": "Verstappen",
     "imagem": "img/pilotos2d/Max-Verstappen.png",
-    "imagemEscolhido": "img/pilotos2d/Max-escolhido.png"
+    "imagemEscolhido": "img/pilotos2d/Max-escolhido.png",
+    "carro": "img/carro_f1/"
   },
   {
     "id": 5,
     "nome": "Lewis",
     "sobrenome": "Hamilton",
     "imagem": "img/pilotos2d/Lewis.png",
-    "imagemEscolhido": "img/pilotos2d/Lewis-escolhido.png"
+    "imagemEscolhido": "img/pilotos2d/Lewis-escolhido.png",
+    "carro": "img/carro_f1/"
   },
   {
     "id": 6,
     "nome": "Michael",
     "sobrenome": "Schumacher",
     "imagem": "img/pilotos2d/Schumacher.jpg",
-    "imagemEscolhido": "img/pilotos2d/Schumacher-escolhido.png"
+    "imagemEscolhido": "img/pilotos2d/Schumacher-escolhido.png",
+    "carro": "img/carro_f1/"
   },
   {
     "id": 7,
     "nome": "Ayrton",
     "sobrenome": "Senna",
     "imagem": "img/pilotos2d/Senna.jpg",
-    "imagemEscolhido": "img/pilotos2d/Senna-escolhido.png"
+    "imagemEscolhido": "img/pilotos2d/Senna-escolhido.png",
+    "carro": "img/carro_f1/"
   }
 ]

@@ -1,0 +1,72 @@
+[
+  {
+    "id": 1,
+    "teamName": "Ferrari",
+    "carImage": "https://media.formula1.com/image/upload/f_auto,c_limit,q_auto,w_1320/content/dam/fom-website/teams/2025/ferrari.png",
+    "brandLogo": "https://media.formula1.com/image/upload/f_auto,c_limit,q_auto,w_1320/content/dam/fom-website/2018-redesign-assets/team%20logos/ferrari",
+    "brandColor": "#DC0000"
+  },
+  {
+    "id": 2,
+    "teamName": "Red Bull Racing",
+    "carImage": "https://media.formula1.com/image/upload/f_auto,c_limit,q_auto,w_1320/content/dam/fom-website/teams/2025/red-bull-racing.png",
+    "brandLogo": "https://media.formula1.com/image/upload/f_auto,c_limit,q_75,w_1320/content/dam/fom-website/2018-redesign-assets/team%20logos/red%20bull",
+    "brandColor": "#202B4E"
+  },
+  {
+    "id": 3,
+    "teamName": "Mercedes",
+    "carImage": "https://media.formula1.com/image/upload/f_auto,c_limit,q_auto,w_1320/content/dam/fom-website/teams/2025/mercedes.png",
+    "brandLogo": "https://media.formula1.com/image/upload/f_auto,c_limit,q_auto,w_1320/content/dam/fom-website/2018-redesign-assets/team%20logos/mercedes",
+    "brandColor": "#01E1D5"
+  },
+  {
+    "id": 4,
+    "teamName": "McLaren",
+    "carImage": "https://media.formula1.com/image/upload/f_auto,c_limit,q_auto,w_1320/content/dam/fom-website/teams/2025/mclaren.png",
+    "brandLogo": "https://media.formula1.com/image/upload/f_auto,c_limit,q_auto,w_1320/content/dam/fom-website/2018-redesign-assets/team%20logos/mclaren",
+    "brandColor": "#FF8700"
+  },
+  {
+    "id": 5,
+    "teamName": "Aston Martin",
+    "carImage": "https://media.formula1.com/image/upload/f_auto,c_limit,q_auto,w_1320/content/dam/fom-website/teams/2025/aston-martin.png",
+    "brandLogo": "https://media.formula1.com/image/upload/f_auto,c_limit,q_auto,w_1320/content/dam/fom-website/2018-redesign-assets/team%20logos/aston%20martin",
+    "brandColor": "#006F62"
+  },
+  {
+    "id": 6,
+    "teamName": "Racing Bulls",
+    "carImage": "https://media.formula1.com/image/upload/f_auto,c_limit,q_auto,w_1320/content/dam/fom-website/teams/2025/rb.png",
+    "brandLogo": "https://media.formula1.com/image/upload/f_auto,c_limit,q_auto,w_1320/content/dam/fom-website/2018-redesign-assets/team%20logos/rb",
+    "brandColor": "#1434CB"
+  },
+  {
+    "id": 7,
+    "teamName": "Stake F1 Team Kick Sauber",
+    "carImage": "https://media.formula1.com/d_team_car_fallback_image.png/content/dam/fom-website/teams/2025/kick-sauber.png",
+    "brandLogo": "https://media.formula1.com/image/upload/f_auto,c_limit,q_75,w_1320/content/dam/fom-website/2018-redesign-assets/team%20logos/kick%20sauber",
+    "brandColor": "#0AFF0A"
+  },
+  {
+    "id": 8,
+    "teamName": "Haas F1 Team",
+    "carImage": "https://media.formula1.com/image/upload/f_auto,c_limit,q_auto,w_1320/content/dam/fom-website/teams/2025/haas.png",
+    "brandLogo": "https://media.formula1.com/image/upload/f_auto,c_limit,q_auto,w_1320/content/dam/fom-website/2018-redesign-assets/team%20logos/haas",
+    "brandColor": "#B6BABD"
+  },
+  {
+    "id": 9,
+    "teamName": "Alpine",
+    "carImage": "https://media.formula1.com/image/upload/f_auto,c_limit,q_auto,w_1320/content/dam/fom-website/teams/2025/alpine.png",
+    "brandLogo": "https://media.formula1.com/image/upload/f_auto,c_limit,q_auto,w_1320/content/dam/fom-website/2018-redesign-assets/team%20logos/alpine",
+    "brandColor": "#FF88BD"
+  },
+  {
+    "id": 10,
+    "teamName": "Williams",
+    "carImage": "https://media.formula1.com/image/upload/f_auto,c_limit,q_auto,w_1320/content/dam/fom-website/teams/2025/williams.png",
+    "brandLogo": "https://media.formula1.com/image/upload/f_auto,c_limit,q_auto,w_1320/content/dam/fom-website/2018-redesign-assets/team%20logos/williams",
+    "brandColor": "#0228A7"
+  }
+]
