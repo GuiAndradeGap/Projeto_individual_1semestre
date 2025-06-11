@@ -8,6 +8,7 @@
     <title>Car Racing</title>
 </head>
 <body onload="buscarPartida()">
+
      <div class="navbar">
         <div class="container">
             <div class="logo"></div>
@@ -29,6 +30,26 @@
             <canvas id="canvas" width="800" height="550"></canvas>
         </div>
     </div>
+
+    <!-- Modal -->
+    <dialog id="modal_instrucao">
+    <div id="container">
+        <p>Instruções do Jogo</p>
+        <ol>
+            <li><strong>Corrida com obstáculos:</strong> Evite bater nos obstáculos! Cada colisão reduz sua velocidade.</li>
+            <li><strong>Controles:</strong> 
+                <ul>
+                    <li>Seta para <strong>esquerda</strong> – virar à esquerda</li>
+                    <li>Seta para <strong>direita</strong> – virar à direita</li>
+                    <li>Seta para <strong>cima</strong> – ativar boost de velocidade</li>
+                </ul>
+            </li>
+            <li><strong>Objetivo:</strong> Complete a corrida em até <strong>1 minuto</strong> para vencer!</li>
+        </ol>
+        <button id="button">Vamos correr</button>
+    </div>
+    </dialog>
+
 </body>
 </html>
 

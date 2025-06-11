@@ -43,7 +43,6 @@ tempoParida = setInterval(() =>{
 }, 1000)
 }
 
-cronometrar()
 
 // Desenhando o carro
 function desenharCarro(){
@@ -55,7 +54,7 @@ function desenharBackground(){
     ctx.drawImage(paisagem, -90, 0, canvas.width*1.3, canvas.height/1.95)
 }
 
-// Desenhando o 
+// Desenhando a grama
 function desenharGrama(){
     ctx.fillStyle = '#0E833F'
     ctx.fillRect(0, canvas.height/2 , canvas.width, canvas.height/2)
@@ -68,7 +67,7 @@ function velocidadeCarro(){
 function jogo(){
 loopDoJogo = setInterval(() =>{
     if(JogoRodando == false){
-        clearInterval(loopDoJogo); // ← para o loop se o jogo parar
+        clearInterval(loopDoJogo); 
     }
     ctx.clearRect(0, 0, canvas.width, canvas.height)
     velocidadeCarro()
@@ -93,7 +92,18 @@ for (let i = 0; i < obstaculos.length; i++) {
 console.log(obstaculos)
 }
 
-jogo()
+//Modal
+modal = document.getElementById('modal_instrucao')
+button = document.getElementById('button')
+
+modal.showModal()
+
+button.onclick = function (){
+    modal.close()
+    jogo()
+    cronometrar()
+}
+
 
 
 

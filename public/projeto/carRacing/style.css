@@ -78,3 +78,52 @@ canvas{
 #cronometro{
     font-size: 38px;
 }
+
+/* Modal */
+dialog#modal_instrucao::backdrop {
+    background: rgba(0, 0, 0, 0.5); /* escurece o fundo */
+}
+
+
+#modal_instrucao{
+    height: 350px;
+    width: 500px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: none;
+    border-radius: 10px;
+    padding: 2%;
+}
+
+#modal_instrucao #container{
+    height: 100%;
+    width: 100%;
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 40px;
+}
+
+#modal_instrucao #container p{
+    font-family: "upheavtt", sans-serif;
+    font-size: 32px;
+}
+
+#modal_instrucao #container li{
+    margin-top: 2%;
+}
+
+#modal_instrucao #container button{
+    font-family: "upheavtt";
+    border: 2px solid #FF0000;
+    border-radius: 5px;
+    width: 200px;
+    height: 35px;
+    background-color: #FF0000;
+    color: #fff;
+    font-size: 20px;
+    cursor: pointer;
+}
